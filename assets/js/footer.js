@@ -2,13 +2,13 @@ document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('footer').innerHTML = `
     <div class="footer-content">
         <div class="footer-section about">
-            <h1 class="logo-text"><span>Votre</span>Logo</h1>
+            <h1 class="logo-text"><img src="../../ressources/fleo-web.png" alt="logo"></h1>
             <p>
                 Votre entreprise est un leader dans son domaine, offrant des produits et services de haute qualité. Nous nous efforçons de fournir une expérience client exceptionnelle.
             </p>
             <div class="contact">
-                <span><i class="fas fa-phone"></i> &nbsp; 123-456-789</span>
-                <span><i class="fas fa-envelope"></i> &nbsp; info@votreentreprise.com</span>
+                <span><i class="fas fa-phone"></i> &nbsp; +337.83.08.49.92</span>
+                <span><i class="fas fa-envelope"></i> &nbsp; dorianMetLesAdresse@NotreEntreprise.com</span>
             </div>
             <div class="socials">
                 <a href="#"><i class="fab fa-facebook"></i></a>
@@ -19,14 +19,13 @@ document.addEventListener('DOMContentLoaded', function() {
         </div>
         <div class="footer-section links">
             <h2>Liens rapides</h2>
-            <br>
-                <ul>
+                <ul id="navFooter">
                     <a href="#"><li>Accueil</li></a>
                     <a href="#"><li>À propos</li></a>
                     <a href="#"><li>Services</li></a>
+                    <a href="#"><li>Catalogue</li></a>
                     <a href="#"><li>Contact</li></a>
                 </ul>
-            </br>
         </div>
         <div class="footer-section contact-form">
             <h2>Contactez-nous</h2>
@@ -44,7 +43,7 @@ document.addEventListener('DOMContentLoaded', function() {
         </div>
     </div>
     <div class="footer-bottom">
-        &copy; 2024 VotreEntreprise | Conçu par VotreNom
+        &copy; 2024 Fleo-sport | Conçu par Torres Léo
     </div>
     `;
 });
