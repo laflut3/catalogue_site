@@ -1,0 +1,125 @@
+/* CSS */
+footer {
+    background: #333;
+    color: #fff;
+    height: auto;
+    width: 100%;
+    text-align: center;
+    padding: 40px 0;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.footer-section {
+    flex: 1;
+    padding: 25px;
+}
+
+.logo-text {
+    font-size: 1.8rem;
+    font-weight: 600;
+}
+
+.logo-text span {
+    color: #4CAF50;
+}
+
+.contact, .socials {
+    margin: 20px 0;
+}
+
+.contact span, .socials a {
+    display: block;
+    color: #fff;
+    margin: 10px 0;
+}
+
+.socials a {
+    text-decoration: none;
+}
+
+.socials a i {
+    font-size: 1.2rem;
+    margin: 0 10px;
+}
+
+.footer-section h2 {
+    font-size: 1.5rem;
+}
+
+.footer-section ul {
+    list-style: none;
+}
+
+.footer-section ul a {
+    text-decoration: none;
+    color: #fff;
+    margin: 10px 0;
+    display: block;
+    transition: 0.3s;
+}
+
+.footer-section ul a:hover {
+    color: #4CAF50;
+    padding-left: 10px;
+}
+
+.contact-form .text-input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: none;
+    outline: none;
+}
+
+.contact-form .btn {
+    padding: 10px 20px;
+    border: none;
+    background: #4CAF50;
+    color: #fff;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.contact-form .btn:hover {
+    background: #3e8e41;
+}
+
+.footer-bottom {
+    padding: 10px;
+    background: #222;
+    color: #fff;
+    text-align: center;
+}
+
+/* Assurez-vous que le HTML et le BODY prennent toute la hauteur */
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+/* Conteneur principal */
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Contenu principal */
+.main-content {
+    flex: 1;
+}
+
+/* Footer */
+.footer-content {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
