@@ -3,9 +3,10 @@ const navBurger = `
             <div id="mySidenav" class="sidenav">
                 <a id="closeBtn" href="#" class="close">×</a>
                 <ul>
+                    <li><a href="#">homme</a></li>
                     <li><a href="#">A propos</a></li>
                     <li><a href="#">Nos services</a></li>
-                    <li><a href="#">Témoignages</a></li>
+                    <li><a href="#">Catalogue</a></li>
                     <li><a href="#">Contact</a></li>
                 </ul>
             </div>
