@@ -1,0 +1,83 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+header {
+    color: #ffffff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5em;
+}
+
+header p {
+    margin: 10px 0 0;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+}
+
+main {
+    padding: 20px 0;
+}
+
+.why-us, .courses, .testimonials {
+    background: #ffffff;
+    margin: 20px 0;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.why-us h2, .courses h2, .testimonials h2 {
+    color: #35424a;
+    margin-bottom: 20px;
+}
+
+.features {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.feature {
+    flex: 1;
+    padding: 10px;
+    margin: 10px;
+    min-width: 250px;
+}
+
+.feature h3 {
+    color: #35424a;
+    margin-bottom: 10px;
+}
+
+.courses ul {
+    list-style: none;
+    padding: 0;
+}
+
+.courses li {
+    background: #35424a;
+    color: #ffffff;
+    margin: 5px 0;
+    padding: 10px;
+    border-radius: 4px;
+}
+
+.testimonials .testimonial {
+    background: #f9f9f9;
+    border-left: 4px solid #35424a;
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 4px;
+}
