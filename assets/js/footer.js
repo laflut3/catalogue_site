@@ -2,9 +2,9 @@ document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('footer').innerHTML = `
     <div class="footer-content">
         <div class="footer-section about">
-            <h1 class="logo-text"><img src="../../ressources/fleo-web.png" alt="logo"></h1>
+            <h1 class="logo-text"><img src="/ressources/fleo-web.png" alt="logo"></h1>
             <p>
-                Votre entreprise est un leader dans son domaine, offrant des produits et services de haute qualité. Nous nous efforçons de fournir une expérience client exceptionnelle.
+                Fleo-web offre des services de haute qualité en development. Nous nous efforçons de fournir une expérience client exceptionnelle.
             </p>
             <div class="contact">
                 <span><i class="fas fa-phone"></i> &nbsp; +337.83.08.49.92</span>
@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', function() {
         <div class="footer-section links">
             <h2>Liens rapides</h2>
                 <ul id="navFooter">
-                    <a href="#"><li>Accueil</li></a>
+                    <a href="/catalogue_site/Acceuil.html"><li>Accueil</li></a>
                     <a href="#"><li>À propos</li></a>
                     <a href="#"><li>Services</li></a>
                     <a href="#"><li>Catalogue</li></a>
