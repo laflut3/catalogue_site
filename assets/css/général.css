@@ -51,6 +51,7 @@ main {
 }
 
 .feature {
+    text-align: center;
     flex: 1;
     padding: 10px;
     margin: 10px;
@@ -108,4 +109,9 @@ button {
 
 button:hover {
     background-color: #e8491d;
+}
+
+.représentation{
+    width: 40%;
+    height: 40%;
 }
