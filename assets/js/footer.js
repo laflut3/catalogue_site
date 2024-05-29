@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('footer').innerHTML = `
     <div class="footer-content">
         <div class="footer-section about">
-            <h1 class="logo-text"><img src="/ressources/fleo-web.png" alt="logo"></h1>
+            <h1 class="logo-text"><img src="/catalogue_site/ressources/fleo-web.png" alt="logo"></h1>
             <p>
                 Fleo-web offre des services de haute qualité en development. Nous nous efforçons de fournir une expérience client exceptionnelle.
             </p>
