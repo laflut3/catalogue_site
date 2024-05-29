@@ -35,52 +35,62 @@ const header = document.getElementById("header");
 header.innerHTML += navbar;
 header.innerHTML += navBurger
 
-const indicator = document.querySelector('.nav-indicator');
-const items = document.querySelectorAll('.nav-item');
+document.addEventListener("DOMContentLoaded", function() {
+    const currentLocation = location.href;
+    const menuItem = document.querySelectorAll('nav a');
+    const menuLength = menuItem.length;
+    const indicator = document.querySelector('.nav-indicator');
+    const items = document.querySelectorAll('.nav-item');
 
-function handleIndicator(el) {
-    // Boucler sur items -> retirer la classe "is-active"
-    items.forEach(item => {
-        item.classList.remove('is-active');
-        item.removeAttribute('style');
-    })
+    function handleIndicator(el) {
+        items.forEach(item => {
+            item.classList.remove('is-active');
+            item.removeAttribute('style');
+        });
 
-    const elementColor = el.dataset.activeColor;
-    const target = el.dataset.target;
+        const elementColor = el.dataset.activeColor;
 
-    // Styliser l'indicateur
-    indicator.style.width = `${el.offsetWidth}px`;
-    indicator.style.backgroundColor = elementColor;
-    indicator.style.left = `${el.offsetLeft}px`;
+        indicator.style.width = `${el.offsetWidth}px`;
+        indicator.style.backgroundColor = elementColor;
+        indicator.style.left = `${el.offsetLeft}px`;
 
-    // Ajout la classe is-active
-    el.classList.add('is-active');
-    el.style.color = elementColor;
-}
+        el.classList.add('is-active');
+        el.style.color = elementColor;
+    }
 
-items.forEach((item, index) => {
-    item.addEventListener('click', e => {
-        handleIndicator(e.target)
+    items.forEach((item, index) => {
+        item.addEventListener('click', e => {
+            handleIndicator(e.target);
+        });
+        if (item.href === currentLocation) {
+            item.classList.add('is-active');
+            handleIndicator(item);
+        }
     });
-    item.classList.contains('is-active') && handleIndicator(item);
+
+    window.addEventListener('resize', () => {
+        const activeItem = document.querySelector('.nav-item.is-active');
+        if (activeItem) {
+            handleIndicator(activeItem);
+        }
+    });
+
+    const burger = document.querySelector('.burger');
+    const sidenav = document.querySelector('.sidenav');
+    const openBtn = document.getElementById("openBtn");
+    const closeBtn = document.getElementById("closeBtn");
+
+    openBtn.onclick = openNav;
+    closeBtn.onclick = closeNav;
+
+    function openNav() {
+        sidenav.classList.add("active");
+    }
+
+    function closeNav() {
+        sidenav.classList.remove("active");
+    }
 });
-
-var sidenav = document.getElementById("mySidenav");
-var openBtn = document.getElementById("openBtn");
-var closeBtn = document.getElementById("closeBtn");
-
-openBtn.onclick = openNav;
-closeBtn.onclick = closeNav;
-
-/* Set the width of the side navigation to 250px */
-function openNav() {
-    sidenav.classList.add("active");
-}
-
-/* Set the width of the side navigation to 0 */
-function closeNav() {
-    sidenav.classList.remove("active");
-}
 
 
 
