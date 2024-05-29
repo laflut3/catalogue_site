@@ -1,14 +1,12 @@
-/* On fait en sorte que chaque élément contienne sa marge interne avec box-sizing et on retire les traits qui sont par défaut sur les liens */
 * {
     box-sizing: border-box;
     text-decoration: none;
 }
 
-.navSimple{
+.navSimple {
     display: flex;
 }
 
-/* On modernise notre balise de navigation avec une petite ombre. On mets tous les éléments du menu les uns bien à côté des autres avec flexbox (display: flex) */
 nav {
     background-color: #fff;
     padding: 0 20px;
@@ -21,16 +19,14 @@ nav {
     justify-content: center;
 }
 
-/* On stylise chaque élément */
 .nav-item {
     color: #83818c;
-    font-family: arial, sans-serif;
+    font-family: Arial, sans-serif;
     padding: 20px;
     margin: 0 6px;
     position: relative;
 }
 
-/* Ici on met juste un petit élément avant chaque élément pour le rendre plus beau visuellement */
 .nav-item:before {
     content: "";
     position: absolute;
@@ -43,15 +39,14 @@ nav {
     transition: .3s;
 }
 
-/* Avec les dernières nouveautés de CSS, on peut changer les propriétés des éléments selon des conditions avec not */
 .nav-item:not(.is-active):hover:before {
     bottom: 0;
 }
+
 .nav-item:not(.is-active):hover {
     color: #333;
 }
 
-/* Stylisons notre indicateur */
 .nav-indicator {
     position: absolute;
     left: 0;
@@ -61,7 +56,6 @@ nav {
     border-radius: 8px 8px 0 0;
 }
 
-/* Sidenav menu */
 .sidenav {
     height: 100%;
     width: 250px;
@@ -74,7 +68,6 @@ nav {
     transition: left 0.5s ease;
 }
 
-/* Sidenav menu links */
 .sidenav a {
     padding: 8px 8px 8px 32px;
     text-decoration: none;
@@ -94,12 +87,10 @@ nav {
     margin: 0;
 }
 
-/* Active class */
 .sidenav.active {
     left: 0;
 }
 
-/* Close btn */
 .sidenav .close {
     position: absolute;
     top: 0;
@@ -107,7 +98,6 @@ nav {
     font-size: 36px;
 }
 
-/* Icône burger */
 .burger-icon span {
     display: block;
     width: 35px;
@@ -116,16 +106,16 @@ nav {
     margin: 6px 0;
 }
 
-.burger{
+.burger {
     display: none;
 }
 
-@media screen and (max-width: 630px){
-    .navSimple{
+@media screen and (max-width: 630px) {
+    .navSimple {
         display: none;
     }
 
-    .burger{
+    .burger {
         display: block;
     }
 
