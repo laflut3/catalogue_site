@@ -4,10 +4,10 @@ const navBurger = `
                 <a id="closeBtn" href="#" class="close">×</a>
                 <ul>
                     <li><a href="/catalogue_site/Acceuil.html">home</a></li>
-                    <li><a href="#">A propos</a></li>
-                    <li><a href="#">Nos services</a></li>
-                    <li><a href="#">Catalogue</a></li>
-                    <li><a href="#">Contact</a></li>
+                    <li><a href="/catalogue_site/A_propos.html">A propos</a></li>
+                    <li><a href="/catalogue_site/Nos_services.html">Nos services</a></li>
+                    <li><a href="/catalogue_site/Catalogue.html">Catalogue</a></li>
+                    <li><a href="/catalogue_site/Contact.html">Contact</a></li>
                 </ul>
             </div>
             <a href="#" id="openBtn">
@@ -23,10 +23,10 @@ const navBurger = `
 let navbar = `
         <nav class = navSimple>
             <a href="/catalogue_site/Acceuil.html" class="nav-item is-active" data-active-color="orange" data-target="Home">Home</a>
-            <a href="#" class="nav-item" data-active-color="green" data-target="About">A propos</a>
-            <a href="#" class="nav-item" data-active-color="blue" data-target="Testimonials">Nos service</a>
-            <a href="#" class="nav-item" data-active-color="red" data-target="Blog">catalogue</a>
-            <a href="#" class="nav-item" data-active-color="rebeccapurple" data-target="Contact">Contact</a>
+            <a href="/catalogue_site/A_propos.html" class="nav-item" data-active-color="green" data-target="About">A propos</a>
+            <a href="/catalogue_site/Nos_services.html" class="nav-item" data-active-color="blue" data-target="Testimonials">Nos service</a>
+            <a href="/catalogue_site/Catalogue.html" class="nav-item" data-active-color="red" data-target="Blog">catalogue</a>
+            <a href="/catalogue_site/Contact.html" class="nav-item" data-active-color="rebeccapurple" data-target="Contact">Contact</a>
             <span class="nav-indicator"></span>
         </nav>
     `;
