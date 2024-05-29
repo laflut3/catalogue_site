@@ -3,7 +3,7 @@ const navBurger = `
             <div id="mySidenav" class="sidenav">
                 <a id="closeBtn" href="#" class="close">×</a>
                 <ul>
-                    <li><a href="/Acceuil.html">home</a></li>
+                    <li><a href="/catalogue_site/Acceuil.html">home</a></li>
                     <li><a href="#">A propos</a></li>
                     <li><a href="#">Nos services</a></li>
                     <li><a href="#">Catalogue</a></li>
@@ -22,7 +22,7 @@ const navBurger = `
 
 let navbar = `
         <nav class = navSimple>
-            <a href="/Acceuil.html" class="nav-item is-active" data-active-color="orange" data-target="Home">Home</a>
+            <a href="/catalogue_site/Acceuil.html" class="nav-item is-active" data-active-color="orange" data-target="Home">Home</a>
             <a href="#" class="nav-item" data-active-color="green" data-target="About">A propos</a>
             <a href="#" class="nav-item" data-active-color="blue" data-target="Testimonials">Nos service</a>
             <a href="#" class="nav-item" data-active-color="red" data-target="Blog">catalogue</a>
