@@ -121,3 +121,8 @@ html, body {
 #navFooter {
     padding: 0;
 }
+
+#logoFooter{
+    width: 25%;
+    height: 25%;
+}
