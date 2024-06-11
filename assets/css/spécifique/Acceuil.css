@@ -1,9 +1,18 @@
 .feature {
     text-align: center;
     flex: 1;
-    padding: 10px;
+    padding: 20px;
     margin: 10px;
     min-width: 250px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
 }
 
 .feature h3 {
@@ -19,7 +28,7 @@
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.why-us h2{
+.why-us h2 {
     color: #35424a;
     margin-bottom: 20px;
 }
@@ -30,7 +39,25 @@
     justify-content: space-around;
 }
 
-.représentation{
+.représentation {
     max-width: 107px;
     max-height: 109px;
+    margin-bottom: 10px;
+}
+
+#titre {
+    padding: 50px 0;
+    background: linear-gradient(135deg, #6b9bff 0%, #8ccaff 100%);
+    color: #fff;
+    border-radius: 10px;
+    margin-bottom: 30px;
+}
+
+#titre h1 {
+    font-size: 3em;
+    margin-bottom: 10px;
+}
+
+#titre p {
+    font-size: 1.2em;
 }
