@@ -5,6 +5,7 @@
 
 .navSimple {
     display: flex;
+    margin: 0 40px 0 40px;
 }
 
 nav {
@@ -110,7 +111,7 @@ nav {
     display: none;
 }
 
-@media screen and (max-width: 630px) {
+@media screen and (max-width: 735px) {
     .navSimple {
         display: none;
     }
