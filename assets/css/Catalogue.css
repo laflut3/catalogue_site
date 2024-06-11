@@ -1,0 +1,57 @@
+.Choix {
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    max-width: 300px;
+    text-align: center;
+    background-color: #fff;
+    margin: 20px;
+}
+
+.Choix:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.Choix img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-bottom: 1px solid #ddd;
+    transition: opacity 0.3s ease;
+}
+
+.description {
+    text-decoration: none;
+    color: #333;
+    display: block;
+}
+
+.description div {
+    padding: 20px;
+    border-top: 1px solid #ddd;
+    background-color: #f9f9f9;
+    transition: background-color 0.3s ease;
+}
+
+.description p {
+    margin: 0;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #555;
+}
+
+.description:hover img {
+    opacity: 0.9;
+}
+
+.description div:hover {
+    background-color: #e9e9e9;
+}
+
+.Choix {
+    padding: 10px;
+    box-sizing: border-box;
+}
