@@ -35,20 +35,6 @@ document.addEventListener('DOMContentLoaded', function() {
                     <a href="/catalogue_site/Contact.html"><li>Contact</li></a>
                 </ul>
         </div>
-        <div class="footer-section contact-form">
-            <h2>Contactez-nous</h2>
-            <br>
-                <form action="index.html" method="post">
-                    <input type="email" name="email" class="text-input contact-input" placeholder="Votre email...">
-                        <textarea rows="4" name="message" class="text-input contact-input" placeholder="Votre message..."></textarea>
-                        <button type="submit" class="btn btn-big">
-                            <i class="fas fa-envelope"></i>
-                            Envoyer
-                        </button>
-                    </input>
-                </form>
-            </br>
-        </div>
     </div>
     <div class="footer-bottom">
         &copy; 2024 Fleo-sport | Conçu par Torres Léo
