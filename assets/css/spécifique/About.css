@@ -42,7 +42,8 @@ ul {
     padding: 0;
 }
 
-ul li {
+#liste li {
+    background: #35424a;
     color: #ffffff;
     margin: 5px 0;
     padding: 10px;
