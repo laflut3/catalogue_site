@@ -35,6 +35,9 @@ document.addEventListener('DOMContentLoaded', function() {
                     <a href="/catalogue_site/Contact.html"><li>Contact</li></a>
                 </ul>
         </div>
+        <div>
+            <img src="/assets/ressources/image/FLEOTHING.gif" alt="fleoGif" id="GIF">
+        </div>
     </div>
     <div class="footer-bottom">
         &copy; 2024 Fleo-sport | Conçu par Torres Léo
