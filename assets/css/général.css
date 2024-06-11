@@ -10,6 +10,7 @@ header {
     color: #ffffff;
     padding: 20px 0;
     text-align: center;
+    margin: 10px;
 }
 
 header h1 {
@@ -112,6 +113,6 @@ button:hover {
 }
 
 .représentation{
-    width: 40%;
-    height: 40%;
+    max-width: 107px;
+    max-height: 109px;
 }
