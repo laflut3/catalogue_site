@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('footer').innerHTML = `
     <div class="footer-content">
         <div class="footer-section about">
-            <h1 class="logo-text"><img src="/catalogue_site/assets/ressources/fleo-web-sans-fond.png" alt="logo" id="logoFooter"></h1>
+            <h1 class="logo-text"><img src="/catalogue_site/assets/ressources/image/fleo-web-sans-fond.png" alt="logo" id="logoFooter"></h1>
             <p>
                 Fleo-web offre des services de haute qualité en development. Nous nous efforçons de fournir une expérience client exceptionnelle.
             </p>
@@ -12,16 +12,16 @@ document.addEventListener('DOMContentLoaded', function() {
             </div>
             <div class="socials">
                 <a href="#">
-                    <img class="icone" src="/catalogue_site/assets/ressources/github.png" alt="github">
+                    <img class="icone" src="/catalogue_site/assets/ressources/image/réseau/github.png" alt="github">
                 </a>
                 <a href="#">
-                    <img class="icone" src="/catalogue_site/assets/ressources/facebook.png" alt="facebook">
+                    <img class="icone" src="/catalogue_site/assets/ressources/image/réseau/facebook.png" alt="facebook">
                 </a>
                 <a href="https://www.instagram.com/fleo.corp?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==">
-                    <img class="icone" src="/catalogue_site/assets/ressources/instagram.png" alt="insta">
+                    <img class="icone" src="/catalogue_site/assets/ressources/image/réseau/instagram.png" alt="insta">
                 </a>
                 <a href="#">
-                    <img class="icone" src="/catalogue_site/assets/ressources/tiktok.png" alt="tiktok">
+                    <img class="icone" src="/catalogue_site/assets/ressources/image/réseau/tiktok.png" alt="tiktok">
                 </a>
             </div>
         </div>
