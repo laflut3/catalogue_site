@@ -1,0 +1,25 @@
+.service-item {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    margin: 20px 0;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-item img {
+    width: 100px;
+    height: 100px;
+    margin-right: 20px;
+}
+
+.service-item h3 {
+    margin: 0;
+}
+
+.service-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
