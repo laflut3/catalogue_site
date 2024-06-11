@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog avec Gestion de Compte</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+    <nav>
+        <ul>
+            <li><a href="#home">Accueil</a></li>
+            <li><a href="#posts">Articles</a></li>
+            <li><a href="#about">À propos</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="#login">Connexion</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+    <section id="home">
+        <h1>Bienvenue sur notre Blog</h1>
+        <p>Découvrez nos derniers articles et actualités.</p>
+    </section>
+
+    <section id="posts">
+        <h2>Articles Récents</h2>
+        <div id="article-container"></div>
+
+        <h2>Ajouter un Article</h2>
+        <form id="article-form">
+            <label for="title">Titre de l'Article</label>
+            <input type="text" id="title" name="title" required>
+            <label for="content">Contenu de l'Article</label>
+            <textarea id="content" name="content" required></textarea>
+            <button type="submit">Ajouter</button>
+        </form>
+    </section>
+
+    <section id="about">
+        <h2>À propos de nous</h2>
+        <p>Nous sommes une équipe passionnée par le partage de connaissances et d'actualités dans divers domaines.</p>
+    </section>
+
+    <section id="contact">
+        <h2>Contactez-nous</h2>
+        <p>Email: contact@notreblog.com</p>
+    </section>
+
+    <section id="login">
+        <h2>Connexion</h2>
+        <form id="login-form">
+            <label for="username">Nom d'utilisateur</label>
+            <input type="text" id="username" name="username" required>
+            <label for="password">Mot de passe</label>
+            <input type="password" id="password" name="password" required>
+            <button type="submit">Se connecter</button>
+        </form>
+        <form id="signup-form">
+            <label for="new-username">Nom d'utilisateur</label>
+            <input type="text" id="new-username" name="new-username" required>
+            <label for="new-password">Mot de passe</label>
+            <input type="password" id="new-password" name="new-password" required>
+            <button type="submit">S'inscrire</button>
+        </form>
+        <button id="logout-btn" style="display: none;">Se déconnecter</button>
+    </section>
+</main>
+
+<footer>
+    <p>&copy; 2024 Notre Blog. Tous droits réservés.</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
+
