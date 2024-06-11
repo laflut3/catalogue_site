@@ -1,0 +1,36 @@
+.feature {
+    text-align: center;
+    flex: 1;
+    padding: 10px;
+    margin: 10px;
+    min-width: 250px;
+}
+
+.feature h3 {
+    color: #35424a;
+    margin-bottom: 10px;
+}
+
+.why-us, .courses {
+    background: #ffffff;
+    margin: 20px 0;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.why-us h2{
+    color: #35424a;
+    margin-bottom: 20px;
+}
+
+.features {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.représentation{
+    max-width: 107px;
+    max-height: 109px;
+}
