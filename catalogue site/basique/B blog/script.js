@@ -1,16 +1,14 @@
 document.addEventListener('DOMContentLoaded', (event) => {
     const articleForm = document.getElementById('article-form');
     const articleContainer = document.getElementById('article-container');
-    const loginForm = document.getElementById('login-form');
-    const signupForm = document.getElementById('signup-form');
-    const logoutBtn = document.getElementById('logout-btn');
 
-    let currentUser = JSON.parse(localStorage.getItem('currentUser')) || null;
-    const users = JSON.parse(localStorage.getItem('users')) || [];
+    // Assume this variable determines if the user is an admin
+    const isAdmin = true;
+
+    // Load articles from localStorage
     const articles = JSON.parse(localStorage.getItem('articles')) || [];
 
-    const isAdmin = currentUser && currentUser.isAdmin;
-
+    // Function to display articles
     const displayArticles = () => {
         articleContainer.innerHTML = '';
         articles.forEach((article, index) => {
@@ -37,100 +35,42 @@ document.addEventListener('DOMContentLoaded', (event) => {
         }
     };
 
+    // Function to delete an article
     const deleteArticle = (index) => {
         articles.splice(index, 1);
         localStorage.setItem('articles', JSON.stringify(articles));
         displayArticles();
     };
 
-    const updateUI = () => {
-        if (currentUser) {
-            loginForm.style.display = 'none';
-            signupForm.style.display = 'none';
-            logoutBtn.style.display = 'block';
-            if (currentUser.isAdmin) {
-                articleForm.style.display = 'block';
-            }
-        } else {
-            loginForm.style.display = 'block';
-            signupForm.style.display = 'block';
-            logoutBtn.style.display = 'none';
-            articleForm.style.display = 'none';
-        }
-    };
+    // Display articles on page load
+    displayArticles();
 
+    // Add event listener to the form
     articleForm.addEventListener('submit', function(e) {
         e.preventDefault();
 
+        // Get form values
         const title = document.getElementById('title').value;
         const content = document.getElementById('content').value;
         const date = new Date().toISOString();
 
+        // Create new article object
         const newArticle = {
             title: title,
             content: content,
             date: date
         };
 
+        // Add new article to articles array
         articles.push(newArticle);
 
+        // Save articles array to localStorage
         localStorage.setItem('articles', JSON.stringify(articles));
 
+        // Display the updated articles
         displayArticles();
 
+        // Clear form
         articleForm.reset();
     });
-
-    loginForm.addEventListener('submit', function(e) {
-        e.preventDefault();
-
-        const username = document.getElementById('username').value;
-        const password = document.getElementById('password').value;
-
-        const user = users.find(u => u.username === username && u.password === password);
-
-        if (user) {
-            currentUser = user;
-            localStorage.setItem('currentUser', JSON.stringify(currentUser));
-            updateUI();
-        } else {
-            alert('Nom d\'utilisateur ou mot de passe incorrect');
-        }
-
-        loginForm.reset();
-    });
-
-    signupForm.addEventListener('submit', function(e) {
-        e.preventDefault();
-
-        const newUsername = document.getElementById('new-username').value;
-        const newPassword = document.getElementById('new-password').value;
-
-        const userExists = users.some(u => u.username === newUsername);
-
-        if (userExists) {
-            alert('Nom d\'utilisateur déjà pris');
-        } else {
-            const newUser = {
-                username: newUsername,
-                password: newPassword,
-                isAdmin: false
-            };
-
-            users.push(newUser);
-            localStorage.setItem('users', JSON.stringify(users));
-            alert('Inscription réussie, vous pouvez maintenant vous connecter');
-        }
-
-        signupForm.reset();
-    });
-
-    logoutBtn.addEventListener('click', function() {
-        currentUser = null;
-        localStorage.removeItem('currentUser');
-        updateUI();
-    });
-
-    displayArticles();
-    updateUI();
 });

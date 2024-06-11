@@ -50,11 +50,27 @@ section {
 
 article {
     margin-bottom: 20px;
+    padding: 15px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
     position: relative;
+}
+
+article:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 article h3 {
     margin-top: 0;
+    color: #333;
+}
+
+article p {
+    color: #666;
+    line-height: 1.6;
 }
 
 form {
