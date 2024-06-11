@@ -125,3 +125,7 @@ html, body {
     width: 35%;
     height: 35%;
 }
+
+#about{
+    text-align: center;
+}

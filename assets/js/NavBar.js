@@ -25,7 +25,7 @@ let navbar = `
             <a href="/catalogue_site/Acceuil.html" class="nav-item is-active" data-active-color="orange" data-target="Home">Home</a>
             <a href="/catalogue_site/A_propos.html" class="nav-item" data-active-color="green" data-target="About">A propos</a>
             <a href="/catalogue_site/Nos_services.html" class="nav-item" data-active-color="blue" data-target="Testimonials">Nos service</a>
-            <a href="/catalogue_site/Catalogue.html" class="nav-item" data-active-color="red" data-target="Blog">catalogue</a>
+            <a href="/catalogue_site/Catalogue.html" class="nav-item" data-active-color="red" data-target="Blog">Catalogue</a>
             <a href="/catalogue_site/Contact.html" class="nav-item" data-active-color="rebeccapurple" data-target="Contact">Contact</a>
             <span class="nav-indicator"></span>
         </nav>
