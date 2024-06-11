@@ -126,6 +126,11 @@ html, body {
     height: 35%;
 }
 
-#about{
-    text-align: center;
+.icone{
+    width: 40%;
 }
+
+.socials{
+    display: flex;
+}
+

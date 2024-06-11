@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('footer').innerHTML = `
     <div class="footer-content">
         <div class="footer-section about">
-            <h1 class="logo-text"><img src="/catalogue_site/ressources/fleo-web-sans-fond.png" alt="logo" id="logoFooter"></h1>
+            <h1 class="logo-text"><img src="/catalogue_site/assets/ressources/fleo-web-sans-fond.png" alt="logo" id="logoFooter"></h1>
             <p>
                 Fleo-web offre des services de haute qualité en development. Nous nous efforçons de fournir une expérience client exceptionnelle.
             </p>
@@ -11,10 +11,18 @@ document.addEventListener('DOMContentLoaded', function() {
                 <span><i class="fas fa-envelope"></i> &nbsp; dorianMetLesAdresse@NotreEntreprise.com</span>
             </div>
             <div class="socials">
-                <a href="#"><i class="fab fa-facebook"></i></a>
-                <a href="#"><i class="fab fa-twitter"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
-                <a href="#"><i class="fab fa-linkedin"></i></a>
+                <a href="#">
+                    <img class="icone" src="/catalogue_site/assets/ressources/github.png" alt="github">
+                </a>
+                <a href="#">
+                    <img class="icone" src="/catalogue_site/assets/ressources/facebook.png" alt="facebook">
+                </a>
+                <a href="https://www.instagram.com/fleo.corp?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==">
+                    <img class="icone" src="/catalogue_site/assets/ressources/instagram.png" alt="insta">
+                </a>
+                <a href="#">
+                    <img class="icone" src="/catalogue_site/assets/ressources/tiktok.png" alt="tiktok">
+                </a>
             </div>
         </div>
         <div class="footer-section links">
