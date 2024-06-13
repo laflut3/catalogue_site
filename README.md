@@ -65,9 +65,9 @@ This project is all rigth reserve.
 
 If you have any questions or suggestions, feel free to contact us:
 
-- **Léo Torres**: [GitHub](https://github.com/leo-torres) | [Email](mailto:leo.torres@example.com)
-- **Florian Filloux**: [GitHub](https://github.com/florian-filloux) | [Email](mailto:florian.filloux@example.com)
-- **Dorian Blanchet**: [GitHub](https://github.com/dorian-blanchet) | [Email](mailto:dorian.blanchet@example.com)
+- **Léo Torres**: [GitHub](https://github.com/laflut3) | [Email](mailto:leo0609leo@gmail.com)
+- **Florian Filloux**: [GitHub](https://github.com/ffillouxdev) | [Email](mailto:fillouxflorian56@gmail.com)
+- **Dorian Blanchet**: [GitHub](https://github.com/DodoLeDev) | [Email](mailto:)
 
 ---
 
