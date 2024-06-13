@@ -22,22 +22,23 @@ This repository contains a collection of web projects developed by our team of t
 ## 📂 Project Structure
 
 The repository is organized into the following directories:
-- `asset/` : all project file
-    - `css/` : all css file
-        - `spécifique/` : independent style sheets per page
-    - `js/` : all scrip file
-    - `image/` : 
+
+- `asset/` : All project file
+    - `css/` : All css file
+        - `spécifique/` : Independent style sheets per page
+    - `js/` : All scrip file
+    - `image/` : All image of site
 - `src/`: Source code for the project.
     - `catalogue site/`: Template of site in sell
-        - `Basique/` : all basic formule
-        - `Medium/` : all medium formule
-        - `Advanced/` : all advanced formule
+        - `Basique/` : All basic formule
+        - `Medium/` : All medium formule
+        - `Advanced/` : All advanced formule
 
 ## 🛠️ Technologies Used
 
-- **Front-End**: HTML, CSS, JavaScript, React
-- **Back-End**: Node.js, Express, MongoDB
-- **Tools**: Git, Visual Studio Code, Webpack
+- **Front-End**: HTML, CSS (Tailwind), JavaScript, React
+- **Back-End**: Node.js, PHP, MongoDB, Oracle
+- **Tools**: Git, OVH, Trello, Scrum
 
 ## 🌟 Features
 
