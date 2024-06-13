@@ -14,6 +14,7 @@ header {
     width: 100%;
     top: 0;
     z-index: 1000;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .container {
@@ -22,6 +23,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
 }
 
 .logo {
@@ -54,6 +56,24 @@ nav a:hover {
     align-items: center;
     text-align: center;
     background: url('banner.jpg') no-repeat center center/cover;
+    position: relative;
+    margin-top: 80px; /* To account for fixed header */
+    flex-direction: column;
+}
+
+.banner::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 0;
+}
+
+.banner h1, .banner p, .banner .cta {
+    z-index: 1;
 }
 
 .banner h1 {
@@ -73,11 +93,39 @@ nav a:hover {
     color: #000000;
     text-decoration: none;
     border-radius: 25px;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .cta:hover {
     background-color: #f0f0f0;
+    transform: scale(1.05);
+}
+
+.parallax {
+    background-image: url('parallax-bg.jpg');
+    height: 400px;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #ffffff;
+}
+
+.parallax-content {
+    z-index: 1;
+}
+
+.parallax h2 {
+    font-size: 48px;
+    margin-bottom: 10px;
+}
+
+.parallax p {
+    font-size: 24px;
 }
 
 section {
@@ -85,30 +133,28 @@ section {
     text-align: center;
 }
 
-.about .about-grid {
+.about .about-grid, .services .services-grid {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     margin-top: 40px;
+    flex-wrap: wrap;
+    gap: 20px;
 }
 
-.about-item {
-    width: 30%;
+.about-item, .service-item {
     background-color: #333333;
     padding: 20px;
     border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    flex: 1;
+    min-width: 250px;
+    max-width: 30%;
+    text-align: left;
 }
 
-.services .services-grid {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 40px;
-}
-
-.service-item {
-    width: 30%;
-    background-color: #333333;
-    padding: 20px;
-    border-radius: 10px;
+.about-item:hover, .service-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
 .testimonials .testimonial-item {
@@ -116,6 +162,41 @@ section {
     padding: 20px;
     border-radius: 10px;
     margin-top: 20px;
+}
+
+.contact .form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.contact label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.contact input, .contact textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #444444;
+    border-radius: 5px;
+    background-color: #222222;
+    color: #ffffff;
+    resize: vertical;
+}
+
+.contact button {
+    padding: 15px 30px;
+    background-color: #ffffff;
+    color: #000000;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.contact button:hover {
+    background-color: #f0f0f0;
+    transform: scale(1.05);
 }
 
 footer {
@@ -173,25 +254,16 @@ footer {
     .banner p {
         font-size: 18px;
     }
-}
 
-/* Animations */
-.fade-in {
-    opacity: 0;
-    transition: opacity 1s ease-out;
-}
+    .parallax {
+        height: 300px;
+    }
 
-.fade-in.appear {
-    opacity: 1;
-}
+    .parallax h2 {
+        font-size: 36px;
+    }
 
-.slide-in {
-    transform: translateX(-100%);
-    opacity: 0;
-    transition: transform 0.5s ease-out, opacity 0.5s ease-out;
-}
-
-.slide-in.appear {
-    transform: translateX(0);
-    opacity: 1;
+    .parallax p {
+        font-size: 18px;
+    }
 }
