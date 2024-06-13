@@ -27,6 +27,9 @@ The repository is organized into the following directories:
     - `image/` : 
 - `src/`: Source code for the project.
     - `catalogue site/`: Template of site in sell
+        - `Basique` : all basic formule
+        - `Medium` : all medium formule
+        - `Advanced` : all advanced formule
 
 ## 🛠️ Technologies Used
 
@@ -46,10 +49,29 @@ The repository is organized into the following directories:
 ![Homepage](path/to/homepage_screenshot.png)
 ![Project Page](path/to/project_page_screenshot.png)
 
-## 🚀 Getting Started
+## 🤝 Contributing
 
-To get a local copy up and running, follow these steps:
+We welcome contributions from the community. To contribute, please follow these steps:
 
-1. **Clone the repository**:
-   ```bash
-   git clone https://github.com/your-username/student-web-showcase.git
+1. **Clone the repository**.
+2. **Create a new branch** (`git checkout -b feature/your-feature`).
+3. **Commit your changes** (`git commit -m 'Add some feature'`).
+4. **Push to the branch** (`git push origin feature/your-feature`).
+5. **Open a Pull Request**.
+
+## 📜 License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
+## 📞 Contact
+
+If you have any questions or suggestions, feel free to contact us:
+
+- **Léo Torres**: [GitHub](https://github.com/leo-torres) | [Email](mailto:leo.torres@example.com)
+- **Florian Filloux**: [GitHub](https://github.com/florian-filloux) | [Email](mailto:florian.filloux@example.com)
+- **Dorian Blanchet**: [GitHub](https://github.com/dorian-blanchet) | [Email](mailto:dorian.blanchet@example.com)
+
+---
+
+Thank you for visiting our project! We hope you find our work inspiring and useful. 🌟
+
