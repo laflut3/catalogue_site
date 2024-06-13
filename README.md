@@ -44,11 +44,6 @@ The repository is organized into the following directories:
 - Secure and efficient back-end implementation.
 - Seamless integration between front-end and back-end.
 
-## 📸 Screenshots
-
-![Homepage](path/to/homepage_screenshot.png)
-![Project Page](path/to/project_page_screenshot.png)
-
 ## 🤝 Contributing
 
 We welcome contributions from the community. To contribute, please follow these steps:
