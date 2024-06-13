@@ -28,11 +28,11 @@ document.addEventListener('DOMContentLoaded', function() {
         <div class="footer-section links">
             <h2>Liens rapides</h2>
                 <ul id="navFooter">
-                    <a href="/catalogue_site/Acceuil.html"><li>Accueil</li></a>
-                    <a href="/catalogue_site/A_propos.html"><li>À propos</li></a>
-                    <a href="/catalogue_site/Nos_services.html"><li>Services</li></a>
-                    <a href="/catalogue_site/Catalogue.html"><li>Catalogue</li></a>
-                    <a href="/catalogue_site/Contact.html"><li>Contact</li></a>
+                    <a href="/catalogue_site/src/Acceuil.html"><li>Accueil</li></a>
+                    <a href="/catalogue_site/src/A_propos.html"><li>À propos</li></a>
+                    <a href="/catalogue_site/src/Nos_services.html"><li>Services</li></a>
+                    <a href="/catalogue_site/src/Catalogue.html"><li>Catalogue</li></a>
+                    <a href="/catalogue_site/src/Contact.html"><li>Contact</li></a>
                 </ul>
         </div>
         <div>
