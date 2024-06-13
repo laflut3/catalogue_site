@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 </ul>
         </div>
         <div>
-            <img src="/assets/ressources/image/FLEOTHING.gif" alt="fleoGif" id="GIF">
+            <img src="/catalogue_site/assets/ressources/image/FLEOTHING.gif" alt="fleoGif" id="GIF">
         </div>
     </div>
     <div class="footer-bottom">
