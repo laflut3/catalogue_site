@@ -2,6 +2,8 @@
 
 Welcome to the Student Web Showcase! This project serves as a portfolio for website proposals created by students. Here, you will find various website designs and implementations demonstrating the skills and creativity of our team.
 
+[link](https://laflut3.github.io/catalogue_site/src/Acceuil.html)
+
 ## 🚀 About the Project
 
 This repository contains a collection of web projects developed by our team of talented students. Each project is designed to showcase different aspects of web development, including front-end, back-end, and full-stack development.
