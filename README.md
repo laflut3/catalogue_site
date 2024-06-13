@@ -27,9 +27,9 @@ The repository is organized into the following directories:
     - `image/` : 
 - `src/`: Source code for the project.
     - `catalogue site/`: Template of site in sell
-        - `Basique` : all basic formule
-        - `Medium` : all medium formule
-        - `Advanced` : all advanced formule
+        - `Basique/` : all basic formule
+        - `Medium/` : all medium formule
+        - `Advanced/` : all advanced formule
 
 ## 🛠️ Technologies Used
 
@@ -61,7 +61,7 @@ We welcome contributions from the community. To contribute, please follow these 
 
 ## 📜 License
 
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+This project is all rigth reserve. See the [LICENSE](LICENSE) file for details.
 
 ## 📞 Contact
 
