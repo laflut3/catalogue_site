@@ -61,8 +61,9 @@ function Register(props) {
   );
 }
 
+/*
 Register.propTypes = {
   onRegister: PropTypes.func.isRequired,
-};
+};*/
 
 export default Register;

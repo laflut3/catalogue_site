@@ -11,3 +11,7 @@ export const getUsers = () => {
 export const addUser = (userData) => {
     return axiosInstance.post('/users', userData);
 };
+
+export const getProducts = () => {
+    return axiosInstance.get('/products');
+}

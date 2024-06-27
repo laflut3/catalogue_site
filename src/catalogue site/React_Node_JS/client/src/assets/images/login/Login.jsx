@@ -13,7 +13,6 @@ import sixIcon from '../../assets/images/login/six.jpg';
 import septIcon from '../../assets/images/login/sept.jpg';
 import basIcon from '../../assets/images/login/bas.jpg';
 
-
 /**
  * Composant de connexion permettant aux utilisateurs de se connecter avec un nom d'utilisateur et un mot de passe.
  *
