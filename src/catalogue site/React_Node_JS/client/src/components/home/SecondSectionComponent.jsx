@@ -3,6 +3,7 @@ import BubbleComponent from '../BubbleComponent';
 
 const SecondSectionComponent = ({ serverData }) => {
     const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+    //console.log('Données récupérées avec succès:', serverData);
 
     useEffect(() => {
         const handleResize = () => {
@@ -23,11 +24,11 @@ const SecondSectionComponent = ({ serverData }) => {
                 <span className="relative">Second Section</span>
             </h2>
             <hr className="border-2 border-white w-1/4 mx-auto mb-4" />
-            {serverData.users ? (
+            {serverData.length > 0 ? (
                 <div className="space-y-4 pt-6 h-[25vh]">
                     <div className={`flex ${windowWidth < 680 ? 'flex-col items-center justify-center' : 'justify-evenly items-center'}`}>
-                        {serverData.users.map((user, index) => (
-                            <BubbleComponent key={index} message={user} id={index} />
+                        {serverData.map((user, index) => (
+                            <BubbleComponent key={index} username={user.username} id={index} />
                         ))}
                     </div>
                 </div>

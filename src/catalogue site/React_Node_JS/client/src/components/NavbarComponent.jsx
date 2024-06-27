@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 // assets
 import { IoMenu } from 'react-icons/io5';
-import logoWeb from "../styles/assets/logoSite.png"
+import logoWeb from "../assets/images/logoSite.png"
 
 const NavbarComponent = () => {
     const [isOpen, setIsOpen] = useState(false);

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import axios from 'axios';
+import { getUsers } from '../services/api';
 
 // components
 import NavbarComponent from '../components/NavbarComponent';
@@ -11,12 +11,12 @@ const Home = () => {
     const [serverData, setServerData] = useState([]);
 
     useEffect(() => {
-        axios.get('/api')
-            .then((response) => {
+        getUsers()
+            .then(response => {
                 setServerData(response.data);
             })
-            .catch((error) => {
-                console.error('Error fetching data:', error);
+            .catch(error => {
+                console.error('Erreur lors de la récupération des données:', error);
             });
     }, []);
 
