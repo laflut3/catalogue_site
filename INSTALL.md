@@ -38,7 +38,7 @@ module.exports = {
   plugins: [],
 }
 ```
-Ne pas oublier le import "./index.css"; dans app.jsx ou App.jsx
+Ne pas oublier le import "./index.css"; dans app.jsx ou _app.tsx
 
 # Pour lancer le serveur
 node nom_app.js
