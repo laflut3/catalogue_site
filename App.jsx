@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css'; // Assurez-vous d'inclure les styles globaux de votre application
-import Footer from './Footer'; // Assurez-vous que le chemin est correct
-import Carrousel from './Carrousel'; // Importez le composant Carrousel
+import Footer from '/frontend/src/components/footer'; // Assurez-vous que le chemin est correct
+import Carrousel from '/frontend/src/components/carroussel'; // Importez le composant Carrousel
 
 const App = () => {
     return (
