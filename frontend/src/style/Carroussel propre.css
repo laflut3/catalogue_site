@@ -1,27 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,700;1,700&display=swap");
 
-body {
-    font-family: "Nunito", cursive;
-    color: #efefef;
-    text-align: center;
-    padding: 4em 0;
-    background-color: #212123;
-}
 
 .conteudo__geral {
     display: flex;
     justify-content: center;
-    align-items: center;
-    height: 100vh;
-}
-
-body {
-    margin: 0;
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #1d1e22;
+    height: 75vh;
 }
 
 img {
@@ -53,6 +36,9 @@ img {
     transform-style: preserve-3d;
     user-select: none;
     cursor: grab;
+    color: #efefef;
+    text-align: center;
+    font-family: "Nunito", cursive;
 }
 
 .carrossel-item {
