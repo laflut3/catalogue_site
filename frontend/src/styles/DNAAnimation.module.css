@@ -1,0 +1,68 @@
+.dnaContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.dna {
+    position: relative;
+    width: 50px;
+    height: 200px;
+    animation: spin 2s linear infinite;
+}
+
+.dnaSegment {
+    position: absolute;
+    width: 100%;
+    height: 20px;
+    background: linear-gradient(to right, #79A5FC, #2C6EEE, #0C38BD);
+    border-radius: 50%;
+    animation: dnaAnimation 1s linear infinite;
+}
+
+.dnaSegment:nth-child(1) {
+    top: 0;
+    animation-delay: 0s;
+}
+
+.dnaSegment:nth-child(2) {
+    top: 40px;
+    animation-delay: 0.2s;
+}
+
+.dnaSegment:nth-child(3) {
+    top: 80px;
+    animation-delay: 0.4s;
+}
+
+.dnaSegment:nth-child(4) {
+    top: 120px;
+    animation-delay: 0.6s;
+}
+
+.dnaSegment:nth-child(5) {
+    top: 160px;
+    animation-delay: 0.8s;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes dnaAnimation {
+    0% {
+        transform: translateX(-50%) scale(0.5);
+    }
+    50% {
+        transform: translateX(0) scale(1);
+    }
+    100% {
+        transform: translateX(50%) scale(0.5);
+    }
+}
