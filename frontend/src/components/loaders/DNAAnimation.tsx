@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from '../../styles/DNAAnimation.module.css';
+import styles from '../../styles/loadersStyle/DNAAnimation.module.css';
 
 const DNAAnimation: React.FC = () => {
     return (
