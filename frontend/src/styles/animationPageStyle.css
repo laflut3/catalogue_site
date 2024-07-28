@@ -1,0 +1,16 @@
+:root {
+    --foreground-rgb: 0, 0, 0;
+    --background-start-rgb: 121, 165, 252; /* #79A5FC */
+    --background-mid-rgb: 44, 110, 238; /* #2C6EEE */
+    --background-end-rgb: 12, 56, 141; /* #0C38BD */
+}
+
+body {
+    color: rgb(var(--foreground-rgb));
+    background: linear-gradient(
+            to bottom,
+            rgb(var(--background-start-rgb)),
+            rgb(var(--background-mid-rgb)) 41%,
+            rgb(var(--background-end-rgb)) 89%
+    );
+}
