@@ -1,16 +1,47 @@
-.loader {
+/* LoadingAnimation.module.css */
+.loaderContainer {
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
+    height: auto; /* Adjust as needed */
 }
 
-.helix {
-    width: 45px;
-    height: 45px;
-    border: 4px solid #fff;
-    border-top: 4px solid #3498db;
+.spinnerContainer {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 1.5s ease-in-out;
+}
+
+.spinnerContainer.spinnerComplete {
+    transform: scale(1.5); /* Adjust size as needed */
+}
+
+.spinner {
+    width: 250px; /* Adjust size as needed */
+    height: 250px; /* Adjust size as needed */
+    border: 8px solid white;
+    border-top-color: transparent;
     border-radius: 50%;
-    animation: spin 2.5s linear infinite;
+    animation: spin 1s linear infinite;
+    position: absolute;
+}
+
+.spinner.spinnerStop {
+    animation: joinEnds 0.5s forwards, stopSpin 1s forwards;
+    border-top-color: white; /* Make the circle complete */
+}
+
+.countdownText {
+    position: relative;
+    z-index: 1;
+    pointer-events: none;
+    transition: opacity 0.7s ease-in-out;
+}
+
+.spinnerComplete .countdownText {
+    pointer-events: auto;
 }
 
 @keyframes spin {
@@ -19,5 +50,25 @@
     }
     100% {
         transform: rotate(360deg);
+    }
+}
+
+@keyframes stopSpin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes joinEnds {
+    0% {
+        border-top-color: transparent;
+        border-left-color: transparent;
+    }
+    100% {
+        border-top-color: white;
+        border-left-color: white;
     }
 }

@@ -1,6 +1,6 @@
 import React from 'react';
 
-const NouvellePage: React.FC = () => {
+const accueil: React.FC = () => {
     return (
         <div className="flex items-center justify-center h-screen">
             <h1 className="text-4xl">Bienvenue sur la nouvelle page!</h1>
@@ -8,4 +8,4 @@ const NouvellePage: React.FC = () => {
     );
 }
 
-export default NouvellePage;
+export default accueil;

@@ -1,15 +1,13 @@
 import React from 'react';
-import "../styles/globals.css"
+import "../styles/globals.css";
+import { AppProps } from 'next/app';
 
-import AnimationPages from './index'; // Importez le composant Carrousel
-
-const _app = () => {
+const MyApp = ({ Component, pageProps }: AppProps) => {
     return (
         <div className="App">
-            {/* Votre contenu principal ici */}
-            <AnimationPages />  {/* Utilisation du composant Carrousel */}
+            <Component {...pageProps} />
         </div>
     );
 }
 
-export default _app;
+export default MyApp;

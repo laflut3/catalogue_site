@@ -20,7 +20,7 @@ const Countdown: React.FC<CountdownProps> = ({ initialSeconds, onComplete }) => 
     }, [seconds, onComplete]);
 
     return (
-        <div className="font-Russo text-3xl text-center">
+        <div className="font-Russo text-6xl text-center">
             {seconds > 0 ? (
                 <h1>{seconds}</h1>
             ) : (
