@@ -1,22 +1,24 @@
 "use client";
 
-import React, { useEffect, useRef} from "react";
-import "../styles/Carroussel propre.css";
+import React, { useEffect, useRef, useState } from "react";
+import "../styles/CarrousselPropre.css";
 
-const Carrousel = () => {
-    const containerRef = useRef(null);
-    const carrouselRef = useRef(null);
+const Carrousel: React.FC = () => {
+    const containerRef = useRef<HTMLDivElement | null>(null);
+    const carrouselRef = useRef<HTMLDivElement | null>(null);
+    const [isMouseDown, setIsMouseDown] = useState(false);
+    const [currentMousePos, setCurrentMousePos] = useState(0);
+    const [lastMousePos, setLastMousePos] = useState(0);
+    const [lastMoveTo, setLastMoveTo] = useState(0);
+    const [moveTo, setMoveTo] = useState(0);
 
     useEffect(() => {
         const container = containerRef.current;
         const carrousel = carrouselRef.current;
-        const carrouselItems = carrousel.querySelectorAll(".carrossel-item");
 
-        let isMouseDown = false;
-        let currentMousePos = 0;
-        let lastMousePos = 0;
-        let lastMoveTo = 0;
-        let moveTo = 0;
+        if (!container || !carrousel) return;
+
+        const carrouselItems = carrousel.querySelectorAll<HTMLDivElement>(".carrossel-item");
 
         const createCarrousel = () => {
             const carrouselProps = onResize();
@@ -34,48 +36,48 @@ const Carrousel = () => {
             carrouselItems.forEach((item, i) => {
                 const degreesByItem = degrees * i + "deg";
                 item.style.setProperty("--rotatey", degreesByItem);
-                item.style.setProperty("--tz", tz + "px");
+                item.style.setProperty("--tz", `${tz}px`);
             });
         };
 
-        const lerp = (a, b, n) => n * (a - b) + b;
+        const lerp = (a: number, b: number, n: number) => n * (a - b) + b;
 
-        const distanceZ = (widthElement, length, gap) => {
+        const distanceZ = (widthElement: number, length: number, gap: number) => {
             return widthElement / 2 / Math.tan(Math.PI / length) + gap;
         };
 
-        const calculateHeight = (z) => {
+        const calculateHeight = (z: number) => {
             const t = Math.atan((90 * Math.PI) / 180 / 2);
             const height = t * 2 * z;
             return height;
         };
 
-        const calculateFov = (carrouselProps) => {
+        const calculateFov = (carrouselProps: { w: number; h: number }) => {
             const perspective = window
-                .getComputedStyle(container.querySelector(".container-carrossel"))
-                .perspective.split("px")[0];
+                .getComputedStyle(container.querySelector(".container-carrossel") as Element)
+        .perspective.split("px")[0];
 
             const length =
                 Math.sqrt(carrouselProps.w * carrouselProps.w) +
                 Math.sqrt(carrouselProps.h * carrouselProps.h);
-            const fov = 2 * Math.atan(length / (2 * perspective)) * (180 / Math.PI);
+            const fov = 2 * Math.atan(length / (2 * parseFloat(perspective))) * (180 / Math.PI);
             return fov;
         };
 
-        const getPosX = (x) => {
-            currentMousePos = x;
-            moveTo = currentMousePos < lastMousePos ? moveTo - 2 : moveTo + 2;
-            lastMousePos = currentMousePos;
+        const getPosX = (x: number) => {
+            setCurrentMousePos(x);
+            setMoveTo((prevMoveTo) => (currentMousePos < lastMousePos ? prevMoveTo - 2 : prevMoveTo + 2));
+            setLastMousePos(currentMousePos);
         };
 
         const update = () => {
-            lastMoveTo = lerp(moveTo, lastMoveTo, 0.05);
-            carrousel.style.setProperty("--rotatey", lastMoveTo + "deg");
+            setLastMoveTo((prevLastMoveTo) => lerp(moveTo, prevLastMoveTo, 0.05));
+            carrousel.style.setProperty("--rotatey", `${lastMoveTo}deg`);
             requestAnimationFrame(update);
         };
 
         const onResize = () => {
-            const boundingCarrousel = container.querySelector(".container-carrossel").getBoundingClientRect();
+            const boundingCarrousel = container.querySelector(".container-carrossel")!.getBoundingClientRect();
             const carrouselProps = {
                 w: boundingCarrousel.width,
                 h: boundingCarrousel.height,
@@ -85,23 +87,23 @@ const Carrousel = () => {
 
         const initEvents = () => {
             carrousel.addEventListener("mousedown", () => {
-                isMouseDown = true;
+                setIsMouseDown(true);
                 carrousel.style.cursor = "grabbing";
             });
             carrousel.addEventListener("mouseup", () => {
-                isMouseDown = false;
+                setIsMouseDown(false);
                 carrousel.style.cursor = "grab";
             });
-            container.addEventListener("mouseleave", () => (isMouseDown = false));
+            container.addEventListener("mouseleave", () => setIsMouseDown(false));
 
             carrousel.addEventListener("mousemove", (e) => isMouseDown && getPosX(e.clientX));
 
             carrousel.addEventListener("touchstart", () => {
-                isMouseDown = true;
+                setIsMouseDown(true);
                 carrousel.style.cursor = "grabbing";
             });
             carrousel.addEventListener("touchend", () => {
-                isMouseDown = false;
+                setIsMouseDown(false);
                 carrousel.style.cursor = "grab";
             });
             container.addEventListener("touchmove", (e) => isMouseDown && getPosX(e.touches[0].clientX));
@@ -113,7 +115,7 @@ const Carrousel = () => {
         };
 
         initEvents();
-    }, []);
+    }, [isMouseDown, currentMousePos, lastMousePos, lastMoveTo, moveTo]);
 
     return (
         <div className="conteudo__geral">
