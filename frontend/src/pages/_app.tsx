@@ -1,7 +1,7 @@
 import React from 'react';
 import "../styles/globals.css"
 
-import AnimationPages from './animation'; // Importez le composant Carrousel
+import AnimationPages from './index'; // Importez le composant Carrousel
 
 const _app = () => {
     return (

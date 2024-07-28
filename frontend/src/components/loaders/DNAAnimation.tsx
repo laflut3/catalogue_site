@@ -1,18 +1,14 @@
 import React from 'react';
-import styles from '../../styles/loadersStyle/DNAAnimation.module.css';
+import '@/styles/loadersStyle/DNAAnimation.module.css';
 
-const DNAAnimation: React.FC = () => {
+const AnimationComponent: React.FC = () => {
     return (
-        <div className={styles.dnaContainer}>
-            <div className={styles.dna}>
-                <div className={styles.dnaSegment}></div>
-                <div className={styles.dnaSegment}></div>
-                <div className={styles.dnaSegment}></div>
-                <div className={styles.dnaSegment}></div>
-                <div className={styles.dnaSegment}></div>
+        <div className="animation-container">
+            <div className="animated-element">
+                <div className="inner-element">Contenu</div>
             </div>
         </div>
     );
 };
 
-export default DNAAnimation;
+export default AnimationComponent;
