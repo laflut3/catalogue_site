@@ -1,16 +1,17 @@
 "use client";
 
-import React, { useEffect, useRef, useState } from "react";
-import "../styles/CarrousselPropre.css";
+import React, { useEffect, useRef } from "react";
+import "../styles/Carroussel propre.css";
 
 const Carrousel: React.FC = () => {
     const containerRef = useRef<HTMLDivElement | null>(null);
     const carrouselRef = useRef<HTMLDivElement | null>(null);
-    const [isMouseDown, setIsMouseDown] = useState(false);
-    const [currentMousePos, setCurrentMousePos] = useState(0);
-    const [lastMousePos, setLastMousePos] = useState(0);
-    const [lastMoveTo, setLastMoveTo] = useState(0);
-    const [moveTo, setMoveTo] = useState(0);
+
+    const isMouseDown = useRef(false);
+    const currentMousePos = useRef(0);
+    const lastMousePos = useRef(0);
+    const lastMoveTo = useRef(0);
+    const moveTo = useRef(0);
 
     useEffect(() => {
         const container = containerRef.current;
@@ -30,11 +31,11 @@ const Carrousel: React.FC = () => {
             const fov = calculateFov(carrouselProps);
             const height = calculateHeight(tz);
 
-            container.style.width = tz * 2 + gap * length + "px";
-            container.style.height = height + "px";
+            container.style.width = `${tz * 2 + gap * length}px`;
+            container.style.height = `${height}px`;
 
             carrouselItems.forEach((item, i) => {
-                const degreesByItem = degrees * i + "deg";
+                const degreesByItem = `${degrees * i}deg`;
                 item.style.setProperty("--rotatey", degreesByItem);
                 item.style.setProperty("--tz", `${tz}px`);
             });
@@ -48,65 +49,62 @@ const Carrousel: React.FC = () => {
 
         const calculateHeight = (z: number) => {
             const t = Math.atan((90 * Math.PI) / 180 / 2);
-            const height = t * 2 * z;
-            return height;
+            return t * 2 * z;
         };
 
         const calculateFov = (carrouselProps: { w: number; h: number }) => {
             const perspective = window
                 .getComputedStyle(container.querySelector(".container-carrossel") as Element)
-        .perspective.split("px")[0];
+                .perspective.split("px")[0];
 
             const length =
                 Math.sqrt(carrouselProps.w * carrouselProps.w) +
                 Math.sqrt(carrouselProps.h * carrouselProps.h);
-            const fov = 2 * Math.atan(length / (2 * parseFloat(perspective))) * (180 / Math.PI);
-            return fov;
+            return 2 * Math.atan(length / (2 * parseFloat(perspective))) * (180 / Math.PI);
         };
 
         const getPosX = (x: number) => {
-            setCurrentMousePos(x);
-            setMoveTo((prevMoveTo) => (currentMousePos < lastMousePos ? prevMoveTo - 2 : prevMoveTo + 2));
-            setLastMousePos(currentMousePos);
+            currentMousePos.current = x;
+            moveTo.current = currentMousePos.current < lastMousePos.current ? moveTo.current - 2 : moveTo.current + 2;
+            lastMousePos.current = currentMousePos.current;
         };
 
         const update = () => {
-            setLastMoveTo((prevLastMoveTo) => lerp(moveTo, prevLastMoveTo, 0.05));
-            carrousel.style.setProperty("--rotatey", `${lastMoveTo}deg`);
+            lastMoveTo.current = lerp(moveTo.current, lastMoveTo.current, 0.05);
+            carrousel.style.setProperty("--rotatey", `${lastMoveTo.current}deg`);
             requestAnimationFrame(update);
         };
 
         const onResize = () => {
             const boundingCarrousel = container.querySelector(".container-carrossel")!.getBoundingClientRect();
-            const carrouselProps = {
+            return {
                 w: boundingCarrousel.width,
                 h: boundingCarrousel.height,
             };
-            return carrouselProps;
         };
 
         const initEvents = () => {
             carrousel.addEventListener("mousedown", () => {
-                setIsMouseDown(true);
+                isMouseDown.current = true;
                 carrousel.style.cursor = "grabbing";
             });
             carrousel.addEventListener("mouseup", () => {
-                setIsMouseDown(false);
+                isMouseDown.current = false;
                 carrousel.style.cursor = "grab";
             });
-            container.addEventListener("mouseleave", () => setIsMouseDown(false));
+            container.addEventListener("mouseleave", () => (isMouseDown.current = false));
 
-            carrousel.addEventListener("mousemove", (e) => isMouseDown && getPosX(e.clientX));
+            carrousel.addEventListener("mousemove", (e) => isMouseDown.current && getPosX(e.clientX));
 
             carrousel.addEventListener("touchstart", () => {
-                setIsMouseDown(true);
+                isMouseDown.current = true;
                 carrousel.style.cursor = "grabbing";
             });
             carrousel.addEventListener("touchend", () => {
-                setIsMouseDown(false);
+                isMouseDown.current = false;
                 carrousel.style.cursor = "grab";
             });
-            container.addEventListener("touchmove", (e) => isMouseDown && getPosX(e.touches[0].clientX));
+            container.addEventListener("touchmove", (e) => isMouseDown.current && getPosX(e.touches[0].clientX));
 
             window.addEventListener("resize", createCarrousel);
 
@@ -115,7 +113,7 @@ const Carrousel: React.FC = () => {
         };
 
         initEvents();
-    }, [isMouseDown, currentMousePos, lastMousePos, lastMoveTo, moveTo]);
+    }, []);
 
     return (
         <div className="conteudo__geral">
