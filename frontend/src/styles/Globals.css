@@ -2,17 +2,42 @@
 @tailwind components;
 @tailwind utilities;
 
+html, body {
+  height: 100%;
+}
+
+#__next {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
 @font-face {
   font-family: 'Russo One';
   font-style: normal;
-  font-weight: 300 900;
-  src: url('../asset/font/Russo_One/RussoOne-Regular.ttf') format('truetype');
+  font-weight: 100 900;
+  src: url('../../public/assets/fonts/Russo_One/RussoOne-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Caveat';
+  font-style: normal;
+  font-weight: 100 900;
+  src: url('../../public/assets/fonts/Caveat/Caveat-VariableFont_wght.ttf') format('truetype');
+}
+
+.font-Caveat {
+  font-family: 'Caveat', serif;
 }
 
 .font-Russo {
   font-family: 'Russo One', serif;
 }
 
-header{
+header {
   background-color: #D9D9D9;
+}
+
+footer {
+  background-color: #2F2D2D;
 }
