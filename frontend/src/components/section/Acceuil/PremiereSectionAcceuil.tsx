@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import logo from "@/../public/assets/images/fleo-web-reversed.png";
-import styles from '@/styles/section/premiereSectionAcceuilStyle.module.css';
+import styles from '@/styles/section/Acceuil/PremiereSectionAcceuilStyle.module.css';
 
 const PremiereSectionAcceuil: React.FC = () => {
     return (
