@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useEffect, useRef } from "react";
-import "../../styles/utils/Carroussel propre.css";
+import styles from "@/styles/utils/CarrousselPropre.module.css";
 
 const Carrousel: React.FC = () => {
     const containerRef = useRef<HTMLDivElement | null>(null);
@@ -116,32 +116,32 @@ const Carrousel: React.FC = () => {
     }, []);
 
     return (
-        <div className="conteudo__geral">
-            <div className="container" ref={containerRef}>
-                <div className="container-carrossel">
-                    <div className="carrossel" ref={carrouselRef}>
-                        <div className="carrossel-item">
-                            <img src="../assets/ressources/image/Acceuil/professional.png" alt="Professionnalisme" />
+        <div className={`${styles.conteudoGeral}`}>
+            <div className={`${styles.container}`} ref={containerRef}>
+                <div className={`${styles.containerCarrossel}`}>
+                    <div className={`${styles.carrossel}`} ref={carrouselRef}>
+                        <div className={`${styles.carrosselItem}`}>
+                            <img src="@/../public/assets/ressources/image/professional.png" alt="Professionnalisme" className={`${styles.img}`}/>
                             <h3>Professionnalisme</h3>
                             <p>Nous sommes des étudiants qualifiés et passionnés par le développement web, offrant des services professionnels à des tarifs compétitifs.</p>
                         </div>
-                        <div className="carrossel-item">
-                            <img src="../assets/ressources/image/Acceuil/heart-in-hand.png" alt="Approche Personnalisée" className="représentation" />
+                        <div className={`${styles.carrosselItem}`}>
+                            <img src="@/../public/assets/ressources/image/heart-in-hand.png" alt="Approche Personnalisée" className={`${styles.img}`} />
                             <h3>Approche Personnalisée</h3>
                             <p>Nous prenons le temps de comprendre vos besoins et de créer des solutions sur mesure pour chaque projet.</p>
                         </div>
-                        <div className="carrossel-item">
-                            <img src="../assets/ressources/image/Acceuil/technology.png" alt="Technologies Modernes" className="représentation" />
+                        <div className={`${styles.carrosselItem}`}>
+                            <img src="@/../public/assets/ressources/image/technology.png" alt="Technologies Modernes" className={`${styles.img}`} />
                             <h3>Technologies Modernes</h3>
                             <p>Nous utilisons les technologies et outils les plus récents pour garantir des solutions efficaces et innovantes.</p>
                         </div>
-                        <div className="carrossel-item">
-                            <img src="../assets/ressources/image/Acceuil/collaboration.png" alt="Collaboration" className="représentation" />
+                        <div className={`${styles.carrosselItem}`}>
+                            <img src="@/../public/assets/ressources/image/collaboration.png" alt="Collaboration" className={`${styles.img}`}/>
                             <h3>Collaboration</h3>
                             <p>Nous croyons en une communication ouverte et une collaboration étroite avec nos clients tout au long du projet.</p>
                         </div>
-                        <div className="carrossel-item">
-                            <img src="../assets/ressources/image/Acceuil/engagement.png" alt="Engagement" className="représentation" />
+                        <div className={`${styles.carrosselItem}`}>
+                            <img src="@/../public/assets/ressources/image/engagement.png" alt="Engagement" className={`${styles.img}`}/>
                             <h3>Engagement</h3>
                             <p>Nous nous engageons à livrer des projets de haute qualité, dans les délais et le budget convenus.</p>
                         </div>

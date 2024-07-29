@@ -1,13 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,700;1,700&display=swap");
 
-
-.conteudo__geral {
+.conteudoGeral {
     display: flex;
     justify-content: center;
     height: 75vh;
 }
 
-img {
+.img {
     display: block;
     max-width: 50%;
     height: 125px;
@@ -20,7 +19,7 @@ img {
     align-items: center;
 }
 
-.container-carrossel {
+.containerCarrossel {
     --widthItem: 250px;
     --heightItem: 100px;
     width: var(--widthItem);
@@ -41,7 +40,7 @@ img {
     font-family: "Nunito", cursive;
 }
 
-.carrossel-item {
+.carrosselItem {
     opacity: 0.5;
     position: absolute;
     display: flex;
@@ -52,48 +51,48 @@ img {
     flex-direction: column;
 }
 
-.carrossel-item:hover {
+.carrosselItem:hover {
     opacity: 1;
 }
 
 .carrossel,
-.carrossel-item {
+.carrosselItem {
     width: 100%;
     height: 400px;
 }
 /* background: linear-gradient(-229deg, #642B73, #C6426E); */
 
-.carrossel-item:nth-child(1) {
+.carrosselItem:nth-child(1) {
     --rotatey: 0;
     transform: rotatey(var(--rotatey)) translatez(var(--tz));
     background: linear-gradient(-229deg, #79A5FC, #2C6EEE, #0C388D);
 }
 
-.carrossel-item:nth-child(2) {
+.carrosselItem:nth-child(2) {
     --rotatey: 0;
     transform: rotatey(var(--rotatey)) translatez(var(--tz));
     background: linear-gradient(-229deg, #79A5FC, #2C6EEE, #0C388D);
 }
 
-.carrossel-item:nth-child(3) {
+.carrosselItem:nth-child(3) {
     --rotatey: 0;
     transform: rotatey(var(--rotatey)) translatez(var(--tz));
     background: linear-gradient(-229deg, #79A5FC, #2C6EEE, #0C388D);
 }
-.carrossel-item:nth-child(4) {
+.carrosselItem:nth-child(4) {
     --rotatey: 0;
     transform: rotatey(var(--rotatey)) translatez(var(--tz));
     background: linear-gradient(-229deg, #79A5FC, #2C6EEE, #0C388D);
 }
 
-.carrossel-item:nth-child(5) {
+.carrosselItem:nth-child(5) {
     --rotate: 0;
     transform: rotatey(var(--rotatey)) translatez(var(--tz));
     background: linear-gradient(-229deg, #79A5FC, #2C6EEE, #0C388D);
 }
 
 @media screen and (min-width: 576px) {
-    .container-carrossel {
+    .containerCarrossel {
         --widthItem: 350px;
         --heightItem: 200px;
     }
