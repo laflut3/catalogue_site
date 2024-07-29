@@ -26,7 +26,7 @@ const LoadingAnimation: React.FC<LoadingAnimationProps> = ({ onCountdownComplete
             <div className={`${styles.spinnerContainer} ${isCountdownComplete ? styles.spinnerComplete : ''}`}>
                 <div className={`${styles.spinner} ${isCountdownComplete ? styles.spinnerStop : ''}`}></div>
                 <div
-                    className={`font-Russo text-6xl ${styles.countdownText}`}
+                    className={`font-Russo text-6xl cursor-pointer ${styles.countdownText}`}
                     onClick={handleClick}
                 >
                     {isCountdownComplete ? 'Entrez' : <Countdown initialSeconds={3} onComplete={handleCountdownComplete} />}

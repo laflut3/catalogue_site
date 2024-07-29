@@ -23,7 +23,7 @@ const Index: React.FC = () => {
             transitionElement.classList.add(styles.transitionActive);
             setTimeout(() => {
                 router.push('/Accueil');
-            }, 1500); // Adjust time to match your animation duration
+            }, 500); // Adjust time to match your animation duration
         }
     };
 
