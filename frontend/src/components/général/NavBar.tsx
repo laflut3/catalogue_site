@@ -10,7 +10,7 @@ const NavBar = () => {
                     <a href="/Accueil">Home</a>
                     <a href="/Catalogue">Catalogue</a>
                     <a href="/FAQ">FAQ</a>
-                    <a href="/Contact" className={`${styles.color} p-2`}>Nous contacter</a>
+                    <a href="/Contact" className={`${styles.color} p-3`}>Nous contacter</a>
                 </div>
             </nav>
         </header>
