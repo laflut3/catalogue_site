@@ -2,10 +2,11 @@
 import React from 'react';
 import NavBar from "@/components/général/navBar";
 
+import style from "@/styles/Acceuil.module.css"
 const Accueil: React.FC = () => {
     return (
         <div>
-            <header>
+            <header className={`${style.header}`}>
                 <NavBar />
             </header>
             <main>
