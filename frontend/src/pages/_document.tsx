@@ -5,7 +5,8 @@ class MyDocument extends Document {
         return (
             <Html>
                 <Head>
-                    {/* Vous pouvez ajouter des balises de tête personnalisées ici */}
+                    <link rel="icon" href="/fleo-web-reversed.ico"/>
+                    <title>Fleo-WEB</title>
                 </Head>
                 <body>
                 <Main />
