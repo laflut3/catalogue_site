@@ -1,6 +1,6 @@
 // src/pages/Accueil.tsx
 import React from 'react';
-import NavBar from "@/components/général/navBar";
+import NavBar from "@/components/général/NavBar";
 
 const Accueil: React.FC = () => {
     return (

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Typewriter from 'typewriter-effect';
-import LoadingAnimation from '@/components/loaders/loadingAnimation';
+import LoadingAnimation from '@/components/loaders/LoadingAnimation';
 import styles from '../styles/Index.module.css';
 import { useRouter } from 'next/router';
 
