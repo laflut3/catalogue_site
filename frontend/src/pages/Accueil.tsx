@@ -2,6 +2,7 @@
 import React from 'react';
 import NavBar from "@/components/général/NavBar";
 import Footer from "@/components/général/Footer";
+import PremiereSectionAcceuil from "@/components/section/Acceuil/premiereSectionAcceuil";
 
 
 const Accueil: React.FC = () => {
@@ -9,7 +10,7 @@ const Accueil: React.FC = () => {
         <div>
             <NavBar />
             <main>
-                {/* Autres composants ou contenu */}
+                <PremiereSectionAcceuil/>
             </main>
             <Footer/>
         </div>

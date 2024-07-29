@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useEffect, useRef } from "react";
-import "../styles/Carroussel propre.css";
+import "../../styles/utils/Carroussel propre.css";
 
 const Carrousel: React.FC = () => {
     const containerRef = useRef<HTMLDivElement | null>(null);

@@ -1,4 +1,3 @@
-// pages/_app.js
 import '../styles/Globals.css'
 import { AppProps } from 'next/app'
 
