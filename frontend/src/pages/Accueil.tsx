@@ -1,11 +1,18 @@
+// src/pages/Accueil.tsx
 import React from 'react';
+import NavBar from "@/components/général/navBar";
 
-const accueil: React.FC = () => {
+const Accueil: React.FC = () => {
     return (
-        <div className="flex items-center justify-center h-screen">
-            <h1 className="text-4xl">Bienvenue sur la nouvelle page!</h1>
+        <div>
+            <header>
+                <NavBar />
+            </header>
+            <main>
+                {/* Autres composants ou contenu */}
+            </main>
         </div>
     );
 }
 
-export default accueil;
+export default Accueil;
