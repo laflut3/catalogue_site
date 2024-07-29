@@ -2,8 +2,8 @@
 import React from 'react';
 import NavBar from "@/components/général/NavBar";
 import Footer from "@/components/général/Footer";
-import PremiereSectionAcceuil from "@/components/section/Acceuil/premiereSectionAcceuil";
-
+import PremiereSectionAcceuil from "@/components/section/Acceuil/PremiereSectionAcceuil";
+import DeuxiemeSectionAcceuil from "@/components/section/Acceuil/DeuxiemeSectionAcceuil";
 
 const Accueil: React.FC = () => {
     return (
@@ -11,6 +11,7 @@ const Accueil: React.FC = () => {
             <NavBar />
             <main>
                 <PremiereSectionAcceuil/>
+                <DeuxiemeSectionAcceuil/>
             </main>
             <Footer/>
         </div>
