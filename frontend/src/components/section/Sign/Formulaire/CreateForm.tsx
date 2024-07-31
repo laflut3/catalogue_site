@@ -17,7 +17,7 @@ const CreateForm: React.FC<{ onSwitchToSignIn: () => void }> = ({ onSwitchToSign
                         autoComplete="email"
                         required
                         className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
-                        placeholder="Email address"
+                        placeholder="addresse Email"
                     />
                 </div>
                 <div className="relative">
@@ -29,7 +29,7 @@ const CreateForm: React.FC<{ onSwitchToSignIn: () => void }> = ({ onSwitchToSign
                         autoComplete="current-password"
                         required
                         className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
-                        placeholder="Password"
+                        placeholder="Mot de passe"
                     />
                     <div className="absolute inset-y-0 right-0 pr-3 flex items-center">
                         <button
