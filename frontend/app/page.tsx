@@ -1,10 +1,12 @@
+"use client";
+
 import React, { useState, useEffect } from 'react';
 import Typewriter from 'typewriter-effect';
 import LoadingAnimation from '@/components/loaders/LoadingAnimation';
-import styles from '../styles/Index.module.css';
-import { useRouter } from 'next/router';
+import styles from '@/styles/Index.module.css';
+import { useRouter } from 'next/navigation';
 
-const Index: React.FC = () => {
+const Page: React.FC = () => {
     const [showLoading, setShowLoading] = useState(true);
     const [isCountdownComplete, setIsCountdownComplete] = useState(false);
     const router = useRouter();
@@ -51,4 +53,4 @@ const Index: React.FC = () => {
     );
 };
 
-export default Index;
+export default Page;

@@ -5,19 +5,18 @@ import PremiereSectionAcceuil from "@/components/section/Acceuil/PremiereSection
 import DeuxiemeSectionAcceuil from "@/components/section/Acceuil/DeuxiemeSectionAcceuil";
 import TroisiemeSectionAcceuil from "@/components/section/Acceuil/TroisiemeSectionAcceuil";
 
-
-const Accueil: React.FC = () => {
+const Page: React.FC = () => {
     return (
         <div>
             <NavBar />
             <main>
-                <PremiereSectionAcceuil/>
-                <DeuxiemeSectionAcceuil/>
-                <TroisiemeSectionAcceuil/>
+                <PremiereSectionAcceuil />
+                <DeuxiemeSectionAcceuil />
+                <TroisiemeSectionAcceuil />
             </main>
-            <Footer/>
+            <Footer />
         </div>
     );
 }
 
-export default Accueil;
+export default Page;

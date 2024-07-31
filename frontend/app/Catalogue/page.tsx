@@ -1,18 +1,18 @@
 import React from 'react';
 import NavBar from "@/components/général/NavBar";
 import Footer from "@/components/général/Footer";
-import SectionSign from "@/components/section/Sign/SectionSign";
+import SectionCatalogue from "@/components/section/Catalogue/SectionCatalogue";
 
-const Sign: React.FC = () => {
+const Page: React.FC = () => {
     return (
         <div>
             <NavBar />
             <main>
-                <SectionSign/>
+                <SectionCatalogue/>
             </main>
             <Footer/>
         </div>
     );
 }
 
-export default Sign;
+export default Page;

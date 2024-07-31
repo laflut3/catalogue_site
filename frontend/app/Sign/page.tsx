@@ -1,18 +1,18 @@
 import React from 'react';
 import NavBar from "@/components/général/NavBar";
 import Footer from "@/components/général/Footer";
-import SectionCatalogue from "@/components/section/Catalogue/SectionCatalogue";
+import SectionSign from "@/components/section/Sign/SectionSign";
 
-const Catalogue: React.FC = () => {
+const Page: React.FC = () => {
     return (
         <div>
             <NavBar />
             <main>
-                <SectionCatalogue/>
+                <SectionSign/>
             </main>
             <Footer/>
         </div>
     );
 }
 
-export default Catalogue;
+export default Page;
