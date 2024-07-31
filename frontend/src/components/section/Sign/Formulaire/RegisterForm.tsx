@@ -4,38 +4,37 @@ import styles from "@/styles/section/Sign/SectionSignStyle.module.css";
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
 import { FormEvent, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
-import Link from "next/link";
 import { register } from "@/../actions/register";
 
 const RegisterForm: React.FC<{ onSwitchToSignIn: () => void }> = ({ onSwitchToSignIn }) => {
     const [showPassword, setShowPassword] = useState(false);
-
     const [error, setError] = useState<string>();
     const router = useRouter();
     const ref = useRef<HTMLFormElement>(null);
 
-    const handleSubmit = async (formData: FormData) => {
+    const handleSubmit = async (event: FormEvent) => {
+        event.preventDefault();
+        const formData = new FormData(ref.current!);
         const r = await register({
             nom: formData.get("nom"),
             prenom: formData.get("prenom"),
             username: formData.get("username"),
-            DateOfBirth: formData.get("nom"),
+            dateOfBirth: formData.get("DateOfBirth"),
             phone: formData.get("phone"),
             email: formData.get("email"),
             password: formData.get("password"),
-
         });
         ref.current?.reset();
-        if(r?.error){
+        if (r?.error) {
             setError(r.error);
             return;
         } else {
-            return onSwitchToSignIn;
+            onSwitchToSignIn();
         }
     };
 
     return (
-        <form className="mt-8 space-y-6" action={handleSubmit}>
+        <form className="mt-8 space-y-6" ref={ref} onSubmit={handleSubmit}>
             {error && <div className="">{error}</div>}
             <div className="rounded-md shadow-sm space-y-4">
                 <div>
@@ -44,7 +43,7 @@ const RegisterForm: React.FC<{ onSwitchToSignIn: () => void }> = ({ onSwitchToSi
                         type="text"
                         placeholder="Nom"
                         className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
-                        name=">Nom"
+                        name="nom"
                         required
                     />
                 </div>
@@ -54,7 +53,7 @@ const RegisterForm: React.FC<{ onSwitchToSignIn: () => void }> = ({ onSwitchToSi
                         type="text"
                         placeholder="Prenom"
                         className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
-                        name="Prenom"
+                        name="prenom"
                         required
                     />
                 </div>
@@ -113,7 +112,7 @@ const RegisterForm: React.FC<{ onSwitchToSignIn: () => void }> = ({ onSwitchToSi
                             onClick={() => setShowPassword(!showPassword)}
                             className="text-gray-500 focus:outline-none focus:text-gray-700"
                         >
-                            {showPassword ? <FaEyeSlash/> : <FaEye/>}
+                            {showPassword ? <FaEyeSlash /> : <FaEye />}
                         </button>
                     </div>
                 </div>
@@ -137,7 +136,6 @@ const RegisterForm: React.FC<{ onSwitchToSignIn: () => void }> = ({ onSwitchToSi
                     Créer un compte
                 </button>
             </div>
-
         </form>
     );
 };
