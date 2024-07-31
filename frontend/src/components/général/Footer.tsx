@@ -1,3 +1,5 @@
+"use client";
+
 import React from 'react';
 import styles from '@/styles/général/Footer.module.css';
 import Image from 'next/image';

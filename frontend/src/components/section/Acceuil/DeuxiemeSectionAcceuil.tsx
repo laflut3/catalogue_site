@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import Image from "next/image";
 import web from "@/../public/assets/images/world-wide-web.png";
@@ -9,7 +11,7 @@ const DeuxiemeSectionAcceuil = () => {
     return (
         <section className={`font-Russo relative min-h-screen flex flex-col items-center justify-center ${styles.back}`}>
             <div className="absolute flex items-center justify-center">
-                <Image src={web} alt="web" className={`${styles.web} opacity-30`}/>
+                <Image src={web} alt="web" className={`${styles.web} opacity-30`} />
             </div>
             <div className={`w-full ${styles.marqueeContainer}`}>
                 <h1 className={`text-white text-6xl font-bold mb-32 z-10 ${styles.marquee}`}>

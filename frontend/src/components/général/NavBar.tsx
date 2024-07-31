@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useState } from 'react';
 import Link from 'next/link';
 import styles from '@/styles/général/NavBarStyle.module.css';
@@ -25,8 +27,8 @@ const NavBar = () => {
 
     // Définir les liens de navigation
     const links: LinkProps[] = [
-        { link: "/Accueil", name: "Accueil" },
-        { link: "/Catalogue", name: "Catalogue" },
+        { link: "/Page", name: "Accueil" },
+        { link: "/Page", name: "Catalogue" },
         { link: "/FAQ", name: "FAQ" },
         { link: "/Contact", name: "Nous contacter" }
     ];
@@ -45,7 +47,7 @@ const NavBar = () => {
                             <img src={userProfileImage} alt="Profile" className="rounded-full w-10 h-10" />
                         </div>
                     ) : (
-                        <LastNavLink link="/Sign" name="Se connecter" />
+                        <LastNavLink link="/Page" name="Se connecter" />
                     )}
                 </div>
             </nav>

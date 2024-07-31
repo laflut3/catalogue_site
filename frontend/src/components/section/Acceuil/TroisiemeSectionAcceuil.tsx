@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useEffect, useRef, Suspense } from "react";
 import { Canvas, useLoader, useFrame } from "@react-three/fiber";
 import { OBJLoader } from "three/examples/jsm/loaders/OBJLoader";
