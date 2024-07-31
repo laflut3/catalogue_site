@@ -2,8 +2,8 @@
 
 import React, { useState } from "react";
 import styles from "@/styles/section/Sign/SectionSignStyle.module.css";
+import LoginForm from "@/components/section/Sign/Formulaire/LoginForm";
 import RegisterForm from "@/components/section/Sign/Formulaire/RegisterForm";
-import CreateForm from "@/components/section/Sign/Formulaire/CreateForm";
 
 const SectionSign: React.FC = () => {
     const [isCreatingAccount, setIsCreatingAccount] = useState(false);
@@ -12,10 +12,10 @@ const SectionSign: React.FC = () => {
         <div className={`${styles.container}`}>
             <div className={`${styles.formContainer} ${isCreatingAccount ? styles.rightPanelActive : ''}`}>
                 <div className={`${styles.signInContainer}`}>
-                    <RegisterForm onSwitchToCreate={() => setIsCreatingAccount(true)} />
+                    <LoginForm onSwitchToCreate={() => setIsCreatingAccount(true)} />
                 </div>
                 <div className={styles.signUpContainer}>
-                    <CreateForm onSwitchToSignIn={() => setIsCreatingAccount(false)} />
+                    <RegisterForm onSwitchToSignIn={() => setIsCreatingAccount(false)} />
                 </div>
                 <div className={`${styles.overlayContainer}`}>
                     <div className={styles.overlay}>

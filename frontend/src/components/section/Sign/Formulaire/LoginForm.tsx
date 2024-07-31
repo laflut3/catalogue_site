@@ -1,14 +1,37 @@
 "use client";
 
-import React, { useState } from "react";
+import React, {FormEvent, useState} from "react";
 import styles from "@/styles/section/Sign/SectionSignStyle.module.css";
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
+import { signIn } from "next-auth/react";
+import { useRouter } from "next/navigation";
+import Link from "next/link";
 
-const CreateForm: React.FC<{ onSwitchToSignIn: () => void }> = ({ onSwitchToSignIn }) => {
+const LoginForm: React.FC<{ onSwitchToCreate: () => void }> = ({ onSwitchToCreate }) => {
     const [showPassword, setShowPassword] = useState(false);
 
+    const [error, setError] = useState("");
+    const router = useRouter();
+
+    const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
+        event.preventDefault();
+        const formData = new FormData(event.currentTarget);
+        const res = await signIn("credentials", {
+            email: formData.get("email"),
+            password: formData.get("password"),
+            redirect: false,
+        });
+        if (res?.error) {
+            setError(res.error as string);
+        }
+        if (res?.ok) {
+            return router.push("/");
+        }
+    };
+
     return (
-        <form className="mt-8 space-y-6">
+        <form className="mt-8 space-y-6" onSubmit={handleSubmit}>
+            {error && <div className="text-black">{error}</div>}
             <div className="rounded-md shadow-sm -space-y-px">
                 <div>
                     <label htmlFor="email-address" className="sr-only">Email address</label>
@@ -39,33 +62,30 @@ const CreateForm: React.FC<{ onSwitchToSignIn: () => void }> = ({ onSwitchToSign
                             onClick={() => setShowPassword(!showPassword)}
                             className="text-gray-500 focus:outline-none focus:text-gray-700"
                         >
-                            {showPassword ? <FaEyeSlash/> : <FaEye/>}
+                            {showPassword ? <FaEyeSlash /> : <FaEye />}
                         </button>
                     </div>
                 </div>
             </div>
 
-            <div className="text-sm">
-                <button
-                    type="button"
-                    onClick={onSwitchToSignIn}
-                    className="font-medium text-indigo-600 hover:text-indigo-500"
-                >
-                    Vous avez déja un compte ?
-                </button>
+            <div className="flex items-center justify-between">
+                <div className="text-sm">
+                    <a href="#" className="font-medium text-indigo-600 hover:text-indigo-500">
+                        Mot de passe oublié ?
+                    </a>
+                </div>
             </div>
 
-            <div>
+            <div className={`flex justify-between space-x-4`}>
                 <button
                     type="submit"
                     className={`w-full ${styles.customButton}`}
                 >
-                    Créer un compte
+                    Connectez vous
                 </button>
             </div>
-
         </form>
     );
 };
 
-export default CreateForm;
+export default LoginForm;
