@@ -4,7 +4,7 @@ import styles from "@/styles/section/Sign/SectionSignStyle.module.css";
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
 import { FormEvent, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
-import { register } from "@/../actions/register";
+import { register } from "../../../../../Lib/UserLib/actions/register";
 
 const RegisterForm: React.FC<{ onSwitchToSignIn: () => void }> = ({ onSwitchToSignIn }) => {
     const [showPassword, setShowPassword] = useState(false);

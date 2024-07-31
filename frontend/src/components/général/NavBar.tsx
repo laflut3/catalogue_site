@@ -1,8 +1,11 @@
 "use client";
 
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 import Link from 'next/link';
 import styles from '@/styles/général/NavBarStyle.module.css';
+import {useSession} from "next-auth/react";
+import UserInitials from "../../../Lib/UserLib/composant/UserInitials";
+import {session} from "next-auth/core/routes";
 
 // Définir une interface pour les propriétés des liens
 interface LinkProps {
@@ -11,26 +14,25 @@ interface LinkProps {
 }
 
 // Composant pour les liens de navigation
-const NavLink = ({ link, name }: LinkProps) => (
+const NavLink = ({link, name}: LinkProps) => (
     <Link href={link}>{name}</Link>
 );
 
 // Composant pour le dernier lien de navigation
-const LastNavLink = ({ link, name }: LinkProps) => (
+const LastNavLink = ({link, name}: LinkProps) => (
     <Link href={link} className={`${styles.color} p-3`}>{name}</Link>
 );
 
 const NavBar = () => {
     // État pour suivre si l'utilisateur est connecté
-    const [isLoggedIn, setIsLoggedIn] = useState(false);
+    const { data: session, status } = useSession();
     const userProfileImage = "https://via.placeholder.com/40"; // URL de l'image de profil
 
     // Définir les liens de navigation
     const links: LinkProps[] = [
-        { link: "/Accueil", name: "Accueil" },
-        { link: "/Catalogue", name: "Catalogue" },
-        { link: "/FAQ", name: "FAQ" },
-        { link: "/Contact", name: "Nous contacter" }
+        {link: "/Accueil", name: "Accueil"},
+        {link: "/Catalogue", name: "Catalogue"},
+        {link: "/FAQ", name: "FAQ"},
     ];
 
     return (
@@ -41,13 +43,20 @@ const NavBar = () => {
                     {links.map((linkProps, index) => (
                         <NavLink key={index} {...linkProps} />
                     ))}
-                    {isLoggedIn ? (
+                    {status === "authenticated" ? (
                         <div className="flex items-center space-x-4">
                             <LastNavLink link="/Contact" name="Nous contacter" />
-                            <img src={userProfileImage} alt="Profile" className="rounded-full w-10 h-10" />
+                            {session?.user?.image ? (
+                                <img src={session.user.image} alt="Profile" className="rounded-full w-10 h-10" />
+                            ) : (
+                                <UserInitials firstName={session?.user?.firstName || 'U'} lastName={session?.user?.lastName || 'N'} />
+                            )}
                         </div>
                     ) : (
-                        <LastNavLink link="/Sign" name="Se connecter" />
+                        <div className="flex items-center space-x-4">
+                            <NavLink link="/Contact" name="Nous contacter" />
+                            <LastNavLink link="/Sign" name="Se connecter" />
+                        </div>
                     )}
                 </div>
             </nav>
