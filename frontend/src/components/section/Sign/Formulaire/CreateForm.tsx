@@ -17,7 +17,7 @@ const CreateForm: React.FC<{ onSwitchToSignIn: () => void }> = ({ onSwitchToSign
                         autoComplete="email"
                         required
                         className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
-                        placeholder="Email address"
+                        placeholder="addresse Email"
                     />
                 </div>
                 <div className="relative">
@@ -29,7 +29,7 @@ const CreateForm: React.FC<{ onSwitchToSignIn: () => void }> = ({ onSwitchToSign
                         autoComplete="current-password"
                         required
                         className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
-                        placeholder="Password"
+                        placeholder="Mot de passe"
                     />
                     <div className="absolute inset-y-0 right-0 pr-3 flex items-center">
                         <button
@@ -37,35 +37,28 @@ const CreateForm: React.FC<{ onSwitchToSignIn: () => void }> = ({ onSwitchToSign
                             onClick={() => setShowPassword(!showPassword)}
                             className="text-gray-500 focus:outline-none focus:text-gray-700"
                         >
-                            {showPassword ? <FaEyeSlash /> : <FaEye />}
+                            {showPassword ? <FaEyeSlash/> : <FaEye/>}
                         </button>
                     </div>
                 </div>
             </div>
 
-            <div className="flex items-center justify-between">
-                <div className="text-sm">
-                    <a href="#" className="font-medium text-indigo-600 hover:text-indigo-500">
-                        Forgot your password?
-                    </a>
-                </div>
-            </div>
-
-            <div>
-                <button
-                    type="submit"
-                    className={`${styles.customButton}`}
-                >
-                    Create Account
-                </button>
-            </div>
             <div className="text-sm">
                 <button
                     type="button"
                     onClick={onSwitchToSignIn}
                     className="font-medium text-indigo-600 hover:text-indigo-500"
                 >
-                    Already have an account? Sign in
+                    Vous avez déjà un compte ?
+                </button>
+            </div>
+
+            <div>
+                <button
+                    type="submit"
+                    className={`w-full ${styles.customButton}`}
+                >
+                    Create Account
                 </button>
             </div>
         </form>
