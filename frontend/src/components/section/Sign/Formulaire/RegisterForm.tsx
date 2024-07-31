@@ -17,7 +17,7 @@ const RegisterForm: React.FC<{ onSwitchToCreate: () => void }> = ({ onSwitchToCr
                         autoComplete="email"
                         required
                         className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
-                        placeholder="Email address"
+                        placeholder="addresse Email"
                     />
                 </div>
                 <div className="relative">
@@ -29,7 +29,7 @@ const RegisterForm: React.FC<{ onSwitchToCreate: () => void }> = ({ onSwitchToCr
                         autoComplete="current-password"
                         required
                         className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
-                        placeholder="Password"
+                        placeholder="Mot de passe"
                     />
                     <div className="absolute inset-y-0 right-0 pr-3 flex items-center">
                         <button
@@ -46,7 +46,7 @@ const RegisterForm: React.FC<{ onSwitchToCreate: () => void }> = ({ onSwitchToCr
             <div className="flex items-center justify-between">
                 <div className="text-sm">
                     <a href="#" className="font-medium text-indigo-600 hover:text-indigo-500">
-                        Forgot your password?
+                        Mot de passe oublié ?
                     </a>
                 </div>
             </div>
@@ -56,7 +56,7 @@ const RegisterForm: React.FC<{ onSwitchToCreate: () => void }> = ({ onSwitchToCr
                     type="submit"
                     className={`${styles.customButton}`}
                 >
-                    Sign in
+                    Connecté vous
                 </button>
 
                 <button

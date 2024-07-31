@@ -7,7 +7,7 @@ const SectionSign: React.FC = () => {
     const [isCreatingAccount, setIsCreatingAccount] = useState(false);
 
     return (
-        <div className={styles.container}>
+        <div className={`${styles.container}`}>
             <div className={`${styles.formContainer} ${isCreatingAccount ? styles.rightPanelActive : ''}`}>
                 <div className={`${styles.signInContainer}`}>
                     <RegisterForm onSwitchToCreate={() => setIsCreatingAccount(true)} />
@@ -15,17 +15,17 @@ const SectionSign: React.FC = () => {
                 <div className={styles.signUpContainer}>
                     <CreateForm onSwitchToSignIn={() => setIsCreatingAccount(false)} />
                 </div>
-                <div className={`font-Russo ${styles.overlayContainer}`}>
+                <div className={`${styles.overlayContainer}`}>
                     <div className={styles.overlay}>
                         <div className={`${styles.overlayPanel} ${styles.overlayLeft}`}>
-                            <h1>Welcome Back!</h1>
-                            <p>To keep connected with us please login with your personal info</p>
-                            <button className={styles.ghostButton} onClick={() => setIsCreatingAccount(false)}>Sign In</button>
+                            <h1>Bienvenue sur FLEO-WEB</h1>
+                            <p>Pour rester connecter marqué enregistrer vos informations personnelles</p>
+                            <button className={styles.ghostButton} onClick={() => setIsCreatingAccount(false)}>Connectez vous</button>
                         </div>
                         <div className={`${styles.overlayPanel} ${styles.overlayRight}`}>
                             <h1>FLEO-WEB</h1>
-                            <p>Enter your personal details and start journey with us</p>
-                            <button className={styles.ghostButton} onClick={() => setIsCreatingAccount(true)}>Create Account</button>
+                            <p>Entrez vos informations personnelles et commencer votre journée avec nous</p>
+                            <button className={styles.ghostButton} onClick={() => setIsCreatingAccount(true)}>Créer un compte</button>
                         </div>
                     </div>
                 </div>
