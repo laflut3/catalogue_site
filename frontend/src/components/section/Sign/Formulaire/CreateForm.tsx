@@ -37,37 +37,31 @@ const CreateForm: React.FC<{ onSwitchToSignIn: () => void }> = ({ onSwitchToSign
                             onClick={() => setShowPassword(!showPassword)}
                             className="text-gray-500 focus:outline-none focus:text-gray-700"
                         >
-                            {showPassword ? <FaEyeSlash /> : <FaEye />}
+                            {showPassword ? <FaEyeSlash/> : <FaEye/>}
                         </button>
                     </div>
                 </div>
             </div>
 
-            <div className="flex items-center justify-between">
-                <div className="text-sm">
-                    <a href="#" className="font-medium text-indigo-600 hover:text-indigo-500">
-                        Forgot your password?
-                    </a>
-                </div>
-            </div>
-
-            <div>
-                <button
-                    type="submit"
-                    className={`${styles.customButton}`}
-                >
-                    Create Account
-                </button>
-            </div>
             <div className="text-sm">
                 <button
                     type="button"
                     onClick={onSwitchToSignIn}
                     className="font-medium text-indigo-600 hover:text-indigo-500"
                 >
-                    Already have an account? Sign in
+                    Vous avez déja un compte ?
                 </button>
             </div>
+
+            <div>
+                <button
+                    type="submit"
+                    className={`w-full ${styles.customButton}`}
+                >
+                    Créer un compte
+                </button>
+            </div>
+
         </form>
     );
 };
