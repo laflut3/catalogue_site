@@ -23,7 +23,9 @@
     },
     "typeRoots": [
       "node_modules/@types",
-      "node_modules/@types/three"
+      "node_modules/@types/three",
+      "./node_modules/@types",
+      "./types"
     ]
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
