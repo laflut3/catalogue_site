@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useState } from "react";
 import styles from "@/styles/section/Sign/SectionSignStyle.module.css";
 import { FaEye, FaEyeSlash } from 'react-icons/fa';

@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useState } from "react";
 import styles from "@/styles/section/Sign/SectionSignStyle.module.css";
 import RegisterForm from "@/components/section/Sign/Formulaire/RegisterForm";
