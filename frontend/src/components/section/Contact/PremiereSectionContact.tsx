@@ -1,8 +1,15 @@
-import React, { useRef, useEffect } from 'react';
+import React, {useState, ChangeEvent, FormEvent, useRef, useEffect} from 'react';
+import ExDivThreeForme from "../../../../Lib/threeLib/ExempleDivThreeForme"
 import * as THREE from 'three';
-import { createCube, createSphere, createTorus, createHalfTorus } from './FormeGradiantFactoryLib';
+import Image from "next/image";
+import leoCard from "@/../public/assets/images/leoCard.png"
+import floCard from "@/../public/assets/images/florianCard.png"
+import ContactForm from "@/components/section/Contact/formulaire/ContactForm";
+import { createCube, createSphere, createTorus, createHalfTorus } from '@/../Lib/threeLib/FormeGradiantFactoryLib';
 
-const ExDivThreeForme = () => {
+
+
+export default function Contact() {
     const mountRef = useRef<HTMLDivElement | null>(null);
 
     useEffect(() => {
@@ -62,7 +69,10 @@ const ExDivThreeForme = () => {
         };
     }, [mountRef]);
 
-    return <div ref={mountRef} className="absolute top-0 left-0 w-full h-full"></div>;
-};
-
-export default ExDivThreeForme;
+    return (
+        <section className="min-h-screen flex items-center justify-center bg-gray-100 relative">
+            <ContactForm/>
+            <div ref={mountRef} className="absolute top-0 left-0 w-full h-full"></div>
+        </section>
+    );
+}

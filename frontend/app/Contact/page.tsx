@@ -3,14 +3,14 @@
 import React from 'react';
 import NavBar from "@/components/général/NavBar";
 import Footer from "@/components/général/Footer";
-import SectionContact from "@/components/section/Contact/SectionContact";
+import PremiereSectionContact from "@/components/section/Contact/PremiereSectionContact";
 
 const Catalogue: React.FC = () => {
     return (
         <div>
             <NavBar />
             <main>
-                <SectionContact/>
+                <PremiereSectionContact/>
             </main>
             <Footer/>
         </div>
