@@ -1,11 +1,12 @@
 import Document, { Html, Head, Main, NextScript } from 'next/document'
+import React from "react";
 
 class MyDocument extends Document {
     render() {
         return (
             <Html>
                 <Head>
-                    <link rel="icon" href="/fleo-web-reversed.ico"/>
+                    <link rel="icon" href='@/../public/fleo-web-reversed.ico'/>
                     <title>Fleo-WEB</title>
                 </Head>
                 <body>
