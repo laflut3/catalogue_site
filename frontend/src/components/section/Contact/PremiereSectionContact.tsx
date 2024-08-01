@@ -1,9 +1,6 @@
 import React, {useState, ChangeEvent, FormEvent, useRef, useEffect} from 'react';
 import ExDivThreeForme from "../../../../Lib/threeLib/ExempleDivThreeForme"
 import * as THREE from 'three';
-import Image from "next/image";
-import leoCard from "@/../public/assets/images/leoCard.png"
-import floCard from "@/../public/assets/images/florianCard.png"
 import ContactForm from "@/components/section/Contact/formulaire/ContactForm";
 import { createCube, createSphere, createTorus, createHalfTorus } from '@/../Lib/threeLib/FormeGradiantFactoryLib';
 
