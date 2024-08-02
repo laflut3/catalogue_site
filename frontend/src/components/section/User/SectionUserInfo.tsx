@@ -6,9 +6,19 @@ import UserPage from "./userUtils/UserInfo";
 import Typewriter from "typewriter-effect";
 import * as THREE from "three";
 import {createCube, createHalfTorus, createTorus} from "../../../../Lib/threeLib/FormeGradiantFactoryLib";
+import {router} from "next/client";
+import {useRouter} from "next/navigation";
 
 const SectionUserInfo = () => {
     const { data: session, status } = useSession();
+
+    const router = useRouter();
+
+    useEffect(() => {
+        if (status === "unauthenticated") {
+            router.push('/Sign');
+        }
+    }, [status, router]);
 
     const mountRef = useRef<HTMLDivElement | null>(null);
 

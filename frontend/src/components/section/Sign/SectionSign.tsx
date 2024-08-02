@@ -1,12 +1,23 @@
 "use client";
 
-import React, { useState } from "react";
+import React, {useEffect, useState} from "react";
 import styles from "@/styles/section/Sign/SectionSignStyle.module.css";
 import LoginForm from "@/components/section/Sign/Formulaire/LoginForm";
 import RegisterForm from "@/components/section/Sign/Formulaire/RegisterForm";
+import {useRouter} from "next/navigation";
+import {useSession} from "next-auth/react";
 
 const SectionSign: React.FC = () => {
     const [isCreatingAccount, setIsCreatingAccount] = useState(false);
+
+    const { data: session, status } = useSession();
+    const router = useRouter();
+
+    useEffect(() => {
+        if (status === "authenticated") {
+            router.push('/Accueil');
+        }
+    }, [status, router]);
 
     return (
         <div className={`${styles.container}`}>

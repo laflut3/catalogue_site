@@ -6,6 +6,7 @@ import Footer from "@/components/général/Footer";
 import SectionUserInfo from "@/components/section/User/SectionUserInfo";
 
 const Catalogue: React.FC = () => {
+
     return (
         <div>
             <NavBar />
