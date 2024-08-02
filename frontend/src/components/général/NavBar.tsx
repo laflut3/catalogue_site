@@ -29,9 +29,9 @@ const NavBar = () => {
 
     useEffect(() => {
         if (menuOpen) {
-            setAnimationClass('nav-link-enter');
+            setAnimationClass('navEnter');
         } else {
-            setAnimationClass('nav-link-exit');
+            setAnimationClass('navExit');
         }
     }, [menuOpen]);
 
