@@ -25,7 +25,7 @@ const LastNavLink = ({link, name}: LinkProps) => (
 
 const NavBar = () => {
     // État pour suivre si l'utilisateur est connecté
-    const { data: session, status } = useSession();
+    const {data: session, status} = useSession();
     const userProfileImage = "https://via.placeholder.com/40"; // URL de l'image de profil
 
     // Définir les liens de navigation
@@ -44,18 +44,21 @@ const NavBar = () => {
                         <NavLink key={index} {...linkProps} />
                     ))}
                     {status === "authenticated" ? (
-                        <div className="flex items-center space-x-4">
-                            <LastNavLink link="/Contact" name="Nous contacter" />
-                            {session?.user?.image ? (
-                                <img src={session.user.image} alt="Profile" className="rounded-full w-10 h-10" />
-                            ) : (
-                                <UserInitials firstName={session?.user?.firstName || 'U'} lastName={session?.user?.lastName || 'N'} />
-                            )}
-                        </div>
+                        <Link href="/User" className={`cursor-pointer`}>
+                            <div className="flex items-center space-x-4">
+                                <LastNavLink link="/Contact" name="Nous contacter"/>
+                                {session?.user?.image ? (
+                                    <img src={session.user.image} alt="Profile" className="rounded-full w-10 h-10"/>
+                                ) : (
+                                    <UserInitials firstName={session?.user?.firstName || 'U'}
+                                                  lastName={session?.user?.lastName || 'N'}/>
+                                )}
+                            </div>
+                        </Link>
                     ) : (
                         <div className="flex items-center space-x-4">
-                            <NavLink link="/Contact" name="Nous contacter" />
-                            <LastNavLink link="/Sign" name="Se connecter" />
+                            <NavLink link="/Contact" name="Nous contacter"/>
+                            <LastNavLink link="/Sign" name="Se connecter"/>
                         </div>
                     )}
                 </div>
