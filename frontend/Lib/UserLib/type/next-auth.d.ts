@@ -10,6 +10,7 @@ declare module "next-auth" {
             image: string;
             firstName: string;
             lastName: string;
+            isAdmin: boolean;
         }
     }
 
@@ -20,6 +21,7 @@ declare module "next-auth" {
         image: string;
         firstName: string;
         lastName: string;
+        isAdmin: boolean;
     }
 }
 
@@ -31,5 +33,6 @@ declare module "next-auth/jwt" {
         picture: string;
         firstName: string;
         lastName: string;
+        isAdmin: boolean;
     }
 }

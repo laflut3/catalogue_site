@@ -8,6 +8,7 @@ export interface UserDocument {
     password: string;
     phone: string;
     image: string;
+    isAdmin: boolean;
     dateOfBirth: Date;
     createdAt: Date;
 }
@@ -43,6 +44,10 @@ const UserSchema = new Schema<UserDocument>({
     },
     password: {
         type: String,
+        required: true
+    },
+    isAdmin: {
+        type: Boolean,
         required: true
     }
 }, {

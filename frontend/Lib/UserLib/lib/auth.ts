@@ -3,6 +3,7 @@ import User from "../models/User";
 import type { NextAuthOptions } from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
 import bcrypt from "bcryptjs";
+import {to} from "@react-spring/core";
 
 export const authOptions: NextAuthOptions = {
     providers: [
@@ -33,7 +34,8 @@ export const authOptions: NextAuthOptions = {
                     email: user.email,
                     image: user.image,
                     firstName: user.prenom,
-                    lastName: user.nom
+                    lastName: user.nom,
+                    isAdmin: user.isAdmin
                 };
             }
         })
@@ -50,6 +52,7 @@ export const authOptions: NextAuthOptions = {
                 token.picture = user.image;
                 token.firstName = user.firstName;
                 token.lastName = user.lastName;
+                token.isAdmin = user.isAdmin
             }
             return token;
         },
@@ -61,6 +64,7 @@ export const authOptions: NextAuthOptions = {
                 session.user.image = token.picture;
                 session.user.firstName = token.firstName;
                 session.user.lastName = token.lastName;
+                session.user.isAdmin = token.isAdmin;
             }
             return session;
         }

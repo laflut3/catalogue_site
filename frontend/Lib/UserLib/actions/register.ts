@@ -24,6 +24,7 @@ export const register = async (values: any) => {
             dateOfBirth,
             email,
             password: hashedPassword,
+            isAdmin: false,
         });
         const savedUser = await user.save();
         // Convertir l'utilisateur en objet simple
@@ -35,6 +36,7 @@ export const register = async (values: any) => {
             phone: savedUser.phone,
             dateOfBirth: savedUser.dateOfBirth,
             email: savedUser.email,
+            isAdmin: false,
         };
     } catch (e) {
         console.log(e);
