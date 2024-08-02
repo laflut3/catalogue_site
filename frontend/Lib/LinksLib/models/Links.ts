@@ -1,4 +1,3 @@
-// models/Link.ts
 import mongoose, { Document, Model, Schema } from 'mongoose';
 
 export interface ILink extends Document {
