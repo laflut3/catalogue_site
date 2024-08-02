@@ -1,42 +1,41 @@
 "use client";
 
+import React from 'react';
 import { useSession } from "next-auth/react";
-import React, { useEffect, useState } from "react";
-import axios from "axios";
+import UserPage from "./userUtils/UserInfo";
+import Typewriter from "typewriter-effect";
 
-const UserPage = () => {
-    const { data: session } = useSession();
-    const [user, setUser] = useState(null);
-
-    useEffect(() => {
-        if (session?.user) {
-            axios.get("/api/user").then((response) => {
-                setUser(response.data.user);
-            }).catch((error) => {
-                console.error("Error fetching user data:", error);
-            });
-        }
-    }, [session]);
-
-    if (!session) {
-        return <div>Loading...</div>;
-    }
+const SectionUserInfo = () => {
+    const { data: session, status } = useSession();
 
     return (
-        <div className="min-h-screen flex items-center justify-center bg-gray-100">
-            <div className="bg-white p-8 rounded-lg shadow-md w-full max-w-md">
-                <h1 className="text-2xl font-semibold mb-4">User Information</h1>
-                {user ? (
-                    <div>
-                        <p><strong>Name:</strong> {user.name}</p>
-                        <p><strong>Email:</strong> {user.email}</p>
-                    </div>
-                ) : (
-                    <div>Loading user information...</div>
-                )}
-            </div>
-        </div>
+        <section className="min-h-screen flex flex-col items-center justify-center bg-gray-100 p-6">
+            {status === "authenticated" ? (
+                <>
+                    <UserPage
+                        firstName={session?.user?.firstName || 'undefined'}
+                        lastName={session?.user?.lastName || 'undefined'}
+                        email={session?.user?.email || 'undefined'}
+                        image={session?.user?.image || 'undefined'}
+                        name={session?.user?.name || 'undefined'}
+                    />
+                </>
+            ) : (
+                <div className="text-center">
+                    <Typewriter
+                        onInit={(typewriter) => {
+                            typewriter.typeString("Aucun compte n'est connecté").start();
+                        }}
+                        options={{
+                            autoStart: true,
+                            loop: false,
+                            delay: 50,
+                        }}
+                    />
+                </div>
+            )}
+        </section>
     );
-};
+}
 
-export default UserPage;
+export default SectionUserInfo;

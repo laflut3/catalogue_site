@@ -5,7 +5,6 @@ import Link from 'next/link';
 import styles from '@/styles/général/NavBarStyle.module.css';
 import {useSession} from "next-auth/react";
 import UserInitials from "../../../Lib/UserLib/composant/UserInitials";
-import {session} from "next-auth/core/routes";
 
 // Définir une interface pour les propriétés des liens
 interface LinkProps {
