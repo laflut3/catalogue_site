@@ -1,5 +1,5 @@
-import React, {useState, ChangeEvent, FormEvent} from 'react';
-import {dotWave} from 'ldrs'
+import React, { useState, useEffect, ChangeEvent, FormEvent } from 'react';
+import { dotWave } from 'ldrs';
 
 interface FormData {
     name: string;
@@ -7,17 +7,21 @@ interface FormData {
     message: string;
 }
 
-const ContactForm = () =>{
-    dotWave.register()
+const ContactForm = () => {
+    useEffect(() => {
+        if (typeof window !== 'undefined') {
+            dotWave.register();
+        }
+    }, []);
 
-    const [formData, setFormData] = useState<FormData>({name: '', email: '', message: ''});
+    const [formData, setFormData] = useState<FormData>({ name: '', email: '', message: '' });
     const [status, setStatus] = useState<string>('');
 
     const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-        const {name, value} = e.target;
+        const { name, value } = e.target;
         setFormData((prevData) => ({
             ...prevData,
-            [name]: value
+            [name]: value,
         }));
     };
 
@@ -27,26 +31,26 @@ const ContactForm = () =>{
         const res = await fetch('/api/contact', {
             method: 'POST',
             headers: {
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
             },
-            body: JSON.stringify(formData)
+            body: JSON.stringify(formData),
         });
 
         const data = await res.json();
         if (data.success) {
             setStatus('Message envoyé !');
-            setFormData({name: '', email: '', message: ''});
+            setFormData({ name: '', email: '', message: '' });
         } else {
-            setStatus('Probléme lors de l\'envoie du mail');
+            setStatus('Problème lors de l\'envoi du mail');
         }
     };
 
     return (
         <div className="bg-white p-6 rounded shadow-md w-full max-w-md z-10">
-            <h1 className="text-2xl font-bold mb-4">Contact Us</h1>
+            <h1 className="text-2xl font-bold mb-4">Contactez-nous</h1>
             <form onSubmit={handleSubmit}>
                 <div className="mb-4">
-                    <label className="block text-gray-700">Name:</label>
+                    <label className="block text-gray-700">Nom:</label>
                     <input
                         type="text"
                         name="name"
@@ -81,7 +85,7 @@ const ContactForm = () =>{
                     type="submit"
                     className="w-full bg-blue-500 text-white px-3 py-2 rounded-md hover:bg-blue-600 transition duration-300"
                 >
-                    Send
+                    Envoyer
                 </button>
             </form>
             {status === 'Sending' ? (
@@ -92,7 +96,7 @@ const ContactForm = () =>{
                 <p className="mt-4 text-center">{status}</p>
             )}
         </div>
-    )
-}
+    );
+};
 
-export default ContactForm
+export default ContactForm;
