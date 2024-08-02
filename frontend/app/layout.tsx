@@ -1,17 +1,26 @@
-import '@/styles/Globals.css';
+// app/layout.tsx
 import React from 'react';
-import { Provider } from  "./provider";
+import '@/../src/styles/Globals.css';
+import {Provider} from "./provider";
 
-export default function RootLayout({
-                                       children,
-                                   }: Readonly<{
+interface RootLayoutProps {
     children: React.ReactNode;
-}>) {
+}
+
+const RootLayout = ({ children }: RootLayoutProps) => {
     return (
         <html lang="en">
+        <head>
+            <link rel="icon" href='/fleo-web-reversed.ico'/>
+            <title>Fleo-WEB</title>
+        </head>
+        <body>
         <Provider>
-            <body>{children}</body>
+            {children}
         </Provider>
+        </body>
         </html>
     );
 }
+
+export default RootLayout;
