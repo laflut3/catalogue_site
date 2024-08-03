@@ -35,7 +35,8 @@ export const authOptions: NextAuthOptions = {
                     image: user.image,
                     firstName: user.prenom,
                     lastName: user.nom,
-                    isAdmin: user.isAdmin
+                    isAdmin: user.isAdmin,
+                    DateOfBirth: user.DateOfBirth
                 };
             }
         })
@@ -52,7 +53,8 @@ export const authOptions: NextAuthOptions = {
                 token.picture = user.image;
                 token.firstName = user.firstName;
                 token.lastName = user.lastName;
-                token.isAdmin = user.isAdmin
+                token.isAdmin = user.isAdmin;
+                token.DateOfBirth = user.DateOfBirth;
             }
             return token;
         },
@@ -65,6 +67,7 @@ export const authOptions: NextAuthOptions = {
                 session.user.firstName = token.firstName;
                 session.user.lastName = token.lastName;
                 session.user.isAdmin = token.isAdmin;
+                session.user.DateOfBirth = token.DateOfBirth;
             }
             return session;
         }

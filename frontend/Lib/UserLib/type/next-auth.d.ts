@@ -11,6 +11,7 @@ declare module "next-auth" {
             firstName: string;
             lastName: string;
             isAdmin: boolean;
+            DateOfBirth: Date;
         }
     }
 
@@ -22,6 +23,8 @@ declare module "next-auth" {
         firstName: string;
         lastName: string;
         isAdmin: boolean;
+        DateOfBirth: Date;
+
     }
 }
 
@@ -34,5 +37,6 @@ declare module "next-auth/jwt" {
         firstName: string;
         lastName: string;
         isAdmin: boolean;
+        DateOfBirth: Date;
     }
 }
