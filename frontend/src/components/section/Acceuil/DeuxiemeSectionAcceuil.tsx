@@ -3,8 +3,8 @@
 import React from "react";
 import Image from "next/image";
 import web from "@/../public/assets/images/world-wide-web.png";
-import card1 from "@/../public/assets/images/leoCard.png"; // Chemin vers la première carte
-import card2 from "@/../public/assets/images/florianCard.png"; // Chemin vers la deuxième carte
+import card1 from "../../../../public/assets/images/Card/leoCard.png"; // Chemin vers la première carte
+import card2 from "../../../../public/assets/images/Card/florianCard.png"; // Chemin vers la deuxième carte
 import styles from '@/styles/section/Acceuil/DeuxiemeSectionAcceuilStyle.module.css';
 
 const DeuxiemeSectionAcceuil = () => {

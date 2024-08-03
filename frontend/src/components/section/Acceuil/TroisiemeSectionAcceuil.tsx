@@ -5,6 +5,11 @@ import { Canvas, useLoader, useFrame } from "@react-three/fiber";
 import { OBJLoader } from "three/examples/jsm/loaders/OBJLoader";
 import * as THREE from "three";
 import styles from "@/styles/section/Acceuil/TroisiemeSectionAcceuilStyle.module.css";
+import BrandBox from "@/components/section/Acceuil/AcceuilUtils/BrandBox";
+import Vitrine from "@/../public/assets/images/Offre/Vitrine.webp"
+import Ecommerce from "@/../public/assets/images/Offre/E-commerce.webp"
+import Blog from "@/../public/assets/images/Offre/Blog.webp"
+import Portfolio from "@/../public/assets/images/Offre/Portfolio.webp"
 
 const Model: React.FC<{ path: string; position: [number, number, number]; scale?: number; offset?: number }> = ({
                                                                                                                     path,
@@ -57,7 +62,7 @@ const CameraController: React.FC = () => {
 const TroisiemeSectionAcceuil: React.FC = () => {
     return (
         <section className={`font-Russo relative min-h-screen flex flex-col items-center justify-center bg-white ${styles.canvasContainer}`}>
-            <h1 className="text-6xl font-bold mb-4 pt-8 pb-1">Nos statistiques</h1>
+            <h1 className="text-6xl font-bold mb-4 pt-8 pb-1">Nos Offre</h1>
             <span className="bg-blue-300 h-2 w-32 block mb-8" style={{ backgroundColor: "#99B7DE", height: "10px", width: "300px" }}></span>
             <Canvas className={styles.canvasContainer} camera={{ position: [0, 30, 150], fov: 100 }}>
                 <ambientLight />
@@ -71,10 +76,10 @@ const TroisiemeSectionAcceuil: React.FC = () => {
                 <CameraController />
             </Canvas>
             <div className="absolute flex justify-around w-full" style={{ top: "calc(50% - 120px)" }}>
-                <div className="bg-transparent border border-black w-52 h-72 rounded-2xl"></div>
-                <div className="bg-transparent border border-black w-52 h-72 rounded-2xl"></div>
-                <div className="bg-transparent border border-black w-52 h-72 rounded-2xl"></div>
-                <div className="bg-transparent border border-black w-52 h-72 rounded-2xl"></div>
+                <BrandBox imageSrc={Vitrine} title={"Site Vitrine"} prix={"750 - 1200"}/>
+                <BrandBox imageSrc={Ecommerce} title={"Site E-commerce"} prix={"1200 - 2500"}/>
+                <BrandBox imageSrc={Blog} title={"Blog"} prix={"1500 - 2000"}/>
+                <BrandBox imageSrc={Portfolio} title={"Portfolio"} prix={"750 - 3000"}/>
             </div>
         </section>
     );
