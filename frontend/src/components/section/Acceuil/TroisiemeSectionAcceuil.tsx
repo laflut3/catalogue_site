@@ -1,65 +1,30 @@
 "use client";
 
-import React, { useEffect, useRef, Suspense } from "react";
+import React, { useEffect, useRef, Suspense, useState } from "react";
 import { Canvas, useLoader, useFrame } from "@react-three/fiber";
-import { OBJLoader } from "three/examples/jsm/loaders/OBJLoader";
-import * as THREE from "three";
+import { useInView } from 'react-intersection-observer';
 import styles from "@/styles/section/Acceuil/TroisiemeSectionAcceuilStyle.module.css";
 import BrandBox from "@/components/section/Acceuil/AcceuilUtils/BrandBox";
-import Vitrine from "@/../public/assets/images/Offre/Vitrine.webp"
-import Ecommerce from "@/../public/assets/images/Offre/E-commerce.webp"
-import Blog from "@/../public/assets/images/Offre/Blog.webp"
-import Portfolio from "@/../public/assets/images/Offre/Portfolio.webp"
-
-const Model: React.FC<{ path: string; position: [number, number, number]; scale?: number; offset?: number }> = ({
-                                                                                                                    path,
-                                                                                                                    position,
-                                                                                                                    scale = 1,
-                                                                                                                    offset = 0
-                                                                                                                }) => {
-    const obj = useLoader(OBJLoader, path);
-    const groupRef = useRef<THREE.Group>(null);
-    const initialPositionY = useRef(position[1]);
-
-    useEffect(() => {
-        if (groupRef.current) {
-            groupRef.current.position.set(...position);
-            groupRef.current.scale.set(scale, scale, scale);
-            groupRef.current.rotation.set(0, 0, 0);
-        }
-    }, [position, scale]);
-
-    useEffect(() => {
-        obj.traverse((child) => {
-            if ((child as THREE.Mesh).isMesh) {
-                (child as THREE.Mesh).material = new THREE.MeshStandardMaterial({ color: 0x0000ff });
-            }
-        });
-    }, [obj]);
-
-    // Animation de mouvement de haut en bas avec décalage pour effet de vague
-    useFrame(({ clock }) => {
-        if (groupRef.current) {
-            groupRef.current.position.y = initialPositionY.current + Math.sin(clock.getElapsedTime() + offset) * 10;
-        }
-    });
-
-    return (
-        <group ref={groupRef}>
-            <primitive object={obj} />
-        </group>
-    );
-};
+import Vitrine from "@/../public/assets/images/Offre/Vitrine.webp";
+import Ecommerce from "@/../public/assets/images/Offre/E-commerce.webp";
+import Blog from "@/../public/assets/images/Offre/Blog.webp";
+import Portfolio from "@/../public/assets/images/Offre/Portfolio.webp";
+import Model from "@/components/section/Acceuil/AcceuilUtils/FleoThree";
 
 const CameraController: React.FC = () => {
     useFrame(({ camera }) => {
-        camera.position.set(0, 30, 100); // Dézoomer davantage la caméra pour inclure toutes les lettres
-        camera.lookAt(0, 0, 0); // Orienter la caméra vers le centre
+        camera.position.set(0, 30, 100);
+        camera.lookAt(0, 0, 0);
     });
     return null;
 };
 
 const TroisiemeSectionAcceuil: React.FC = () => {
+    const [ref1, inView1] = useInView({ threshold: 0.5 });
+    const [ref2, inView2] = useInView({ threshold: 0.5 });
+    const [ref3, inView3] = useInView({ threshold: 0.5 });
+    const [ref4, inView4] = useInView({ threshold: 0.5 });
+
     return (
         <section className={`font-Russo relative min-h-screen flex flex-col items-center justify-center bg-white ${styles.canvasContainer}`}>
             <h1 className="text-6xl font-bold mb-4 pt-8 pb-1">Nos Offre</h1>
@@ -76,10 +41,18 @@ const TroisiemeSectionAcceuil: React.FC = () => {
                 <CameraController />
             </Canvas>
             <div className="absolute flex justify-around w-full" style={{ top: "calc(50% - 120px)" }}>
-                <BrandBox imageSrc={Vitrine} title={"Site Vitrine"} prix={"750 - 1200"}/>
-                <BrandBox imageSrc={Ecommerce} title={"Site E-commerce"} prix={"1200 - 2500"}/>
-                <BrandBox imageSrc={Blog} title={"Blog"} prix={"1500 - 2000"}/>
-                <BrandBox imageSrc={Portfolio} title={"Portfolio"} prix={"750 - 3000"}/>
+                <div ref={ref1}>
+                    <BrandBox imageSrc={Vitrine} title={"Site Vitrine"} prix={"750 - 1200"} isVisible={inView1} />
+                </div>
+                <div ref={ref2}>
+                    <BrandBox imageSrc={Ecommerce} title={"Site E-commerce"} prix={"1200 - 2500"} isVisible={inView2} />
+                </div>
+                <div ref={ref3}>
+                    <BrandBox imageSrc={Blog} title={"Blog"} prix={"1500 - 2000"} isVisible={inView3} />
+                </div>
+                <div ref={ref4}>
+                    <BrandBox imageSrc={Portfolio} title={"Portfolio"} prix={"750 - 3000"} isVisible={inView4} />
+                </div>
             </div>
         </section>
     );
