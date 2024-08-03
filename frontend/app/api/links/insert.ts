@@ -1,3 +1,5 @@
+"use client"
+
 import { NextApiRequest, NextApiResponse } from 'next';
 import {connectDB} from '@/../Lib/MongoLib/mongodb';
 import Link from '@/../Lib/LinksLib/models/Links';
@@ -17,7 +19,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
             await newLink.save();
             res.status(201).json(newLink);
         } catch (error) {
-            res.status(500).json({ message: 'Failed to insert link', error });
+            res.status(500).json({ message: "erreur d'insertion" });
         }
     } else {
         res.status(405).json({ message: 'Method not allowed' });

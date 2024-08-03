@@ -38,12 +38,15 @@ const AdminForm: React.FC = () => {
                 </div>
                 <div>
                     <label className="block text-sm font-medium">Type</label>
-                    <input
-                        type="text"
-                        value={type}
-                        onChange={(e) => setType(e.target.value)}
-                        className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm"
-                    />
+                    <label htmlFor="mots">Sélectionnez un mot :</label>
+                    <select value={type}
+                            onChange={(e) => setType(e.target.value)}
+                            className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm">
+                        <option value="E-commerce">E-commerce</option>
+                        <option value="Vitrine">Vitrine</option>
+                        <option value="Portfolio">Portfolio</option>
+                    </select>
+                    <input/>
                 </div>
                 <button
                     type="submit"
