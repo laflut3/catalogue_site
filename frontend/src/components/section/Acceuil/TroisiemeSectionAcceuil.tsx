@@ -27,7 +27,7 @@ const TroisiemeSectionAcceuil: React.FC = () => {
 
     return (
         <section className={`font-Russo relative min-h-screen flex flex-col items-center justify-center bg-white ${styles.canvasContainer}`}>
-            <h1 className="text-6xl font-bold mb-4 pt-8 pb-1">Nos Offre</h1>
+            <h1 className="text-6xl font-bold mb-4 pt-8 pb-1">Nos Offres</h1>
             <span className="bg-blue-300 h-2 w-32 block mb-8" style={{ backgroundColor: "#99B7DE", height: "10px", width: "300px" }}></span>
             <Canvas className={styles.canvasContainer} camera={{ position: [0, 30, 150], fov: 100 }}>
                 <ambientLight />
