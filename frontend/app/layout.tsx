@@ -2,6 +2,8 @@
 import React from 'react';
 import '@/../src/styles/Globals.css';
 import {Provider} from "./provider";
+import NavBar from "@/components/général/NavBar";
+import Footer from "@/components/général/Footer";
 
 interface RootLayoutProps {
     children: React.ReactNode;
@@ -16,8 +18,11 @@ const RootLayout = ({ children }: RootLayoutProps) => {
         </head>
         <body>
         <Provider>
+            <NavBar />
             {children}
+            <Footer />
         </Provider>
+
         </body>
         </html>
     );

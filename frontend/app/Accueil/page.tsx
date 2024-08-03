@@ -7,15 +7,11 @@ import TroisiemeSectionAcceuil from "@/components/section/Acceuil/TroisiemeSecti
 
 const Page: React.FC = () => {
     return (
-        <div>
-            <NavBar />
-            <main>
-                <PremiereSectionAcceuil />
-                <DeuxiemeSectionAcceuil />
-                <TroisiemeSectionAcceuil />
-            </main>
-            <Footer />
-        </div>
+        <main>
+            <PremiereSectionAcceuil/>
+            <DeuxiemeSectionAcceuil/>
+            <TroisiemeSectionAcceuil/>
+        </main>
     );
 }
 
