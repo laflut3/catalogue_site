@@ -1,6 +1,11 @@
 import mongoose, { Schema, model, models } from 'mongoose';
 
-const linkSchema = new Schema({
+export interface LinkDocument {
+    url: string;
+    type: string;
+}
+
+const LinkSchema = new Schema({
     url: {
         type: String,
         required: true,
@@ -11,6 +16,5 @@ const linkSchema = new Schema({
     }
 });
 
-const Link = models.Link || model('Link', linkSchema);
-
+const Link = mongoose.models?.Link || model<LinkDocument>('Link', LinkSchema);
 export default Link;

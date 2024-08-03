@@ -18,7 +18,7 @@ const SectionCatalogue: React.FC = () => {
     useEffect(() => {
         const fetchLinks = async () => {
             try {
-                const response = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/api/links`);
+                const response = await axios.get(`/api/links`);
                 setLinks(response.data);
             } catch (error) {
                 console.error('Failed to fetch links:', error);
