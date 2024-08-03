@@ -1,7 +1,7 @@
 "use client";
 
-import React, { useEffect, useRef, Suspense, useState } from "react";
-import { Canvas, useLoader, useFrame } from "@react-three/fiber";
+import React, { Suspense} from "react";
+import { Canvas, useFrame } from "@react-three/fiber";
 import { useInView } from 'react-intersection-observer';
 import styles from "@/styles/section/Acceuil/TroisiemeSectionAcceuilStyle.module.css";
 import BrandBox from "@/components/section/Acceuil/AcceuilUtils/BrandBox";
