@@ -89,6 +89,8 @@ const SectionUserInfo = () => {
                             image={session?.user?.image || 'undefined'}
                             name={session?.user?.name || 'undefined'}
                             imageVerif={!!session?.user?.image}
+                            DateOfBirth={session?.user?.DateOfBirth}
+                            isAdmin={session?.user?.isAdmin}
                         />
                     </>
                 ) : (
