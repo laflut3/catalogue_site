@@ -1,12 +1,12 @@
-"use client"
+"use client";
 
-// app/layout.tsx
 import React from 'react';
 import '@/../src/styles/Globals.css';
 import { Provider } from "./provider";
 import NavBar from "@/components/général/NavBar";
 import Footer from "@/components/général/Footer";
 import { AnimationProvider, useAnimation } from "@/../context/AnimationContext";
+import ClientOnlyRedirect from '@/components/utils/RedirectOnRefresh';
 
 interface RootLayoutProps {
     children: React.ReactNode;
@@ -22,7 +22,10 @@ const RootLayout = ({ children }: RootLayoutProps) => {
         <body>
         <Provider>
             <AnimationProvider>
-                <ContentWrapper>{children}</ContentWrapper>
+                <ContentWrapper>
+                    <ClientOnlyRedirect />  {/* Ajout du composant de redirection */}
+                    {children}
+                </ContentWrapper>
             </AnimationProvider>
         </Provider>
         </body>
