@@ -19,6 +19,7 @@
     justify-content: center;
 }
 
+/* styles/Index.module.css */
 .contentContainer {
     display: flex;
     flex-direction: column;

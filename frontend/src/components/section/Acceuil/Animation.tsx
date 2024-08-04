@@ -11,19 +11,27 @@ import PremiereSectionAcceuil from "@/components/section/Acceuil/PremiereSection
 import { useAnimation } from '@/../context/AnimationContext';
 
 const Animation: React.FC = () => {
+    const [showEnterButton, setShowEnterButton] = useState(true);
     const [isCountdownComplete, setIsCountdownComplete] = useState(false);
     const [startTransition, setStartTransition] = useState(false);
-    const { isAnimationComplete, setIsAnimationComplete } = useAnimation(); // Ajout de isAnimationComplete
+    const { isAnimationComplete, setIsAnimationComplete } = useAnimation();
 
-    const handleTransition = () => {
-        setStartTransition(true);
+    const handleEnterClick = () => {
+        setShowEnterButton(false); // Masquer le bouton "Entrez"
+    };
+
+    const handleCountdownComplete = () => {
+        setIsCountdownComplete(true); // Indiquer que le compteur est terminé
+        setTimeout(() => {
+            setStartTransition(true); // Déclencher la transition
+        }, 100); // Petite attente pour assurer le bon déroulement
     };
 
     useEffect(() => {
         if (startTransition) {
             setTimeout(() => {
-                setIsAnimationComplete(true);
-            }, 1500); // Duration of the fade-out animation
+                setIsAnimationComplete(true); // Marquer l'animation comme complète
+            }, 1500); // Durée de l'animation de transition
         }
     }, [startTransition, setIsAnimationComplete]);
 
@@ -33,18 +41,46 @@ const Animation: React.FC = () => {
         }
     }, [isAnimationComplete]);
 
+    const hyperspaceEffect = {
+        hidden: {
+            opacity: 1,
+            scale: 1
+        },
+        visible: {
+            opacity: 0,
+            scale: 1.5,
+            transition: {
+                duration: 1.5,
+                ease: "easeInOut"
+            }
+        }
+    };
+
     return (
         <>
             {!isAnimationComplete && (
                 <motion.div
                     className={`text-white flex flex-col items-center justify-center h-screen ${styles.gradientBg}`}
-                    initial={{ opacity: 1, scale: 1 }}
-                    animate={startTransition ? { opacity: 0, scale: 0.5, rotate: 180 } : { opacity: 1, scale: 1 }}
-                    transition={{ duration: 1.5, ease: "easeInOut" }}
+                    initial="hidden"
+                    animate={startTransition ? "visible" : "hidden"}
+                    variants={hyperspaceEffect}
                 >
                     <div className={styles.contentContainer}>
-                        {!isCountdownComplete && (
-                            <div className={`font-Russo ${styles.typewriterContainer}`}>
+                        {showEnterButton && (
+                            <div
+                                className={`font-Russo text-6xl cursor-pointer ${styles.countdownText}`}
+                                onClick={handleEnterClick}
+                            >
+                                Entrez
+                            </div>
+                        )}
+                        {!showEnterButton && !isCountdownComplete && (
+                            <motion.div
+                                initial={{ scale: 1 }}
+                                animate={{ scale: startTransition ? 1.5 : 1 }}
+                                transition={{ duration: 1.5, ease: "easeInOut" }}
+                                className={styles.typewriterContainer}
+                            >
                                 <Typewriter
                                     onInit={(typewriter) => {
                                         typewriter.typeString('READY FOR THE FLEO EXPERIENCE').start();
@@ -55,12 +91,14 @@ const Animation: React.FC = () => {
                                         delay: 50,
                                     }}
                                 />
-                            </div>
+                            </motion.div>
                         )}
-                        <LoadingAnimation
-                            onCountdownComplete={() => setIsCountdownComplete(true)}
-                            handleTransition={handleTransition}
-                        />
+                        {!showEnterButton && !isCountdownComplete && (
+                            <LoadingAnimation
+                                onCountdownComplete={handleCountdownComplete}
+                                handleTransition={() => setStartTransition(true)}
+                            />
+                        )}
                     </div>
                 </motion.div>
             )}

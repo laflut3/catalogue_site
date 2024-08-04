@@ -7,10 +7,18 @@ const ClientOnlyRedirect = () => {
     const router = useRouter();
 
     useEffect(() => {
-        if (typeof window !== 'undefined' && window.performance) {
-            const entries = performance.getEntriesByType("navigation");
-            if (entries.length > 0 && entries[0].type === "reload") {
-                router.push('/');
+        // Vérifier que nous sommes dans un environnement client (navigateur)
+        if (typeof window !== 'undefined') {
+            // Vérifier si l'API de performance est disponible
+            if (window.performance) {
+                // Obtenir les entrées de navigation
+                const entries = performance.getEntriesByType("navigation");
+
+                // Vérifier s'il y a des entrées de navigation et si le type est "reload"
+                if (entries.length > 0 && entries[0].type === "reload") {
+                    // Rediriger vers la racine
+                    router.push('/');
+                }
             }
         }
     }, [router]);
