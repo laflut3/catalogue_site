@@ -47,7 +47,7 @@ const ContentWrapper: React.FC<{ children: React.ReactNode }> = ({ children }) =
             )}
             <NavBar />
             {children}
-            <Footer />
+            {isAnimationComplete && <Footer />}
         </>
     );
 };

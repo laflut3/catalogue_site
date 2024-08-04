@@ -9,11 +9,6 @@ const Page: React.FC = () => {
     return (
         <main className={styles.mainContainer}>
             <Animation />
-            <div id="content" className={styles.hiddenContent}>
-                <PremiereSectionAcceuil />
-                <DeuxiemeSectionAcceuil />
-                <TroisiemeSectionAcceuil />
-            </div>
         </main>
     );
 }
