@@ -12,12 +12,12 @@ const ClientOnlyRedirect = () => {
             // Vérifier si l'API de performance est disponible
             if (window.performance) {
                 // Obtenir les entrées de navigation
-                const entries = performance.getEntriesByType("navigation");
+                const entries = performance.getEntriesByType("navigation") as PerformanceNavigationTiming[];
 
                 // Vérifier s'il y a des entrées de navigation et si le type est "reload"
                 if (entries.length > 0 && entries[0].type === "reload") {
                     // Rediriger vers la racine
-                    router.push('/');
+                    router.replace('/');
                 }
             }
         }

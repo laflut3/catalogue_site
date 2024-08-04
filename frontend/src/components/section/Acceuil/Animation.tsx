@@ -16,7 +16,12 @@ const Animation: React.FC = () => {
     const [textErased, setTextErased] = useState(false);
     const [startShake, setStartShake] = useState(false);
     const [startTransition, setStartTransition] = useState(false);
+    const [isClient, setIsClient] = useState(false);
     const { isAnimationComplete, setIsAnimationComplete } = useAnimation();
+
+    useEffect(() => {
+        setIsClient(true); // Ensuring the component is mounted on the client side
+    }, []);
 
     const handleEnterClick = () => {
         setShowEnterButton(false); // Masquer le bouton "Entrez"
@@ -145,7 +150,7 @@ const Animation: React.FC = () => {
                     <TroisiemeSectionAcceuil />
                 </div>
             </motion.div>
-            {!isAnimationComplete && (
+            {!isAnimationComplete && isClient && (
                 <div className={styles.hyperspaceEffect}>
                     {[...Array(100)].map((_, i) => (
                         <motion.div
