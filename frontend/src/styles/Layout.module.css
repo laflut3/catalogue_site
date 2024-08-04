@@ -1,0 +1,5 @@
+/* Layout.module.css */
+.hideHeaderFooter header,
+.hideHeaderFooter footer {
+    display: none;
+}

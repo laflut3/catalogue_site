@@ -37,7 +37,7 @@ const NavBar = () => {
 
     // Définir les liens de navigation
     const links: LinkProps[] = [
-        { link: "/Accueil", name: "Accueil" },
+        { link: "/", name: "Accueil" },
         { link: "/Catalogue", name: "Catalogue" },
         { link: "/FAQ", name: "FAQ" },
     ];

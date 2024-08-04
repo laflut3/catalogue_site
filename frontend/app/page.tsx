@@ -1,56 +1,21 @@
-"use client";
-
-import React, { useState, useEffect } from 'react';
-import Typewriter from 'typewriter-effect';
-import LoadingAnimation from '@/components/loaders/LoadingAnimation';
+import React from 'react';
+import PremiereSectionAcceuil from "@/components/section/Acceuil/PremiereSectionAcceuil";
+import DeuxiemeSectionAcceuil from "@/components/section/Acceuil/DeuxiemeSectionAcceuil";
+import TroisiemeSectionAcceuil from "@/components/section/Acceuil/TroisiemeSectionAcceuil";
+import Animation from "@/components/section/Acceuil/Animation";
 import styles from '@/styles/Index.module.css';
-import { useRouter } from 'next/navigation';
 
 const Page: React.FC = () => {
-    const [showLoading, setShowLoading] = useState(true);
-    const [isCountdownComplete, setIsCountdownComplete] = useState(false);
-    const router = useRouter();
-
-    useEffect(() => {
-        const timer = setTimeout(() => {
-            setShowLoading(false);
-        }, 8790); // Duration of the video in milliseconds
-
-        return () => clearTimeout(timer);
-    }, []);
-
-    const handleTransition = () => {
-        const transitionElement = document.getElementById('transition');
-        if (transitionElement) {
-            transitionElement.classList.add(styles.transitionActive);
-            setTimeout(() => {
-                router.push('/Accueil');
-            }, 500); // Adjust time to match your animation duration
-        }
-    };
-
     return (
-        <div className={`text-white flex flex-col items-center justify-center h-screen ${styles.gradientBg}`}>
-            <div className={styles.contentContainer}>
-                {!isCountdownComplete && (
-                    <div className={styles.typewriterContainer}>
-                        <Typewriter
-                            onInit={(typewriter) => {
-                                typewriter.typeString('Ready for the FLEO experience').start();
-                            }}
-                            options={{
-                                autoStart: true,
-                                loop: false,
-                                delay: 50,
-                            }}
-                        />
-                    </div>
-                )}
-                <LoadingAnimation onCountdownComplete={() => setIsCountdownComplete(true)} handleTransition={handleTransition} />
+        <main className={styles.mainContainer}>
+            <Animation />
+            <div id="content" className={styles.hiddenContent}>
+                <PremiereSectionAcceuil />
+                <DeuxiemeSectionAcceuil />
+                <TroisiemeSectionAcceuil />
             </div>
-            <div id="transition" className={styles.transition}></div>
-        </div>
+        </main>
     );
-};
+}
 
 export default Page;

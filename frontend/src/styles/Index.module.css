@@ -1,6 +1,22 @@
-/* Page.module.css */
+/* styles/Index.module.css */
+.mainContainer {
+    position: relative;
+}
+
+.hiddenContent {
+    display: none; /* Hide content by default */
+}
+
+.visibleContent {
+    display: block; /* Show content after animation */
+}
+
 .gradientBg {
     background: linear-gradient(to bottom, #79A5FC, #2C6EEE, #0C38BD);
+    height: 100vh; /* Ensure it covers the full viewport height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .contentContainer {
@@ -16,22 +32,17 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    font-size: 30px;
+    font-weight: bold;
+
 }
 
-.transition {
+.transitionFullScreen {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.8);
-    z-index: 10;
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.5s ease;
-}
-
-.transitionActive {
-    opacity: 1;
-    pointer-events: all;
+    background-color: black; /* Adjust as needed */
+    z-index: 20; /* Make sure it is above other content */
 }
