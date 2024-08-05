@@ -21,7 +21,7 @@ const CatalogueFilterBar: React.FC<CatalogueFilterBarProps> = ({ onFilterChange 
     };
 
     return (
-        <div className={` flex justify-center text-center p-10 pt-0`}>
+        <div className={` flex justify-center text-center p-5 pt-0`}>
             <div className="bg-blue-800 text-white rounded-full overflow-hidden flex justify-center"
                  style={{backgroundColor: "#0C388D"}}>
                 <button className="px-6 py-2 hover:bg-blue-700 border-r border-white" onClick={handleEcommerce}>E-commerce</button>

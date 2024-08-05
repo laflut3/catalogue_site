@@ -53,8 +53,8 @@ const SectionCatalogue: React.FC = () => {
     return (
         <section className="min-h-screen pt-8 font-Russo">
             <div className="flex flex-col items-center justify-center">
-                <h1 className="text-6xl font-bold mb-4 pt-8 pb-1">Nos réalisations</h1>
-                <span className="bg-blue-300 h-2 w-32 block mb-8"
+                <h1 className="text-6xl font-bold pt-8 mb-2">Nos réalisations</h1>
+                <span className="bg-blue-300 h-2 w-32 block mb-16"
                       style={{ backgroundColor: "#99B7DE", height: "10px", width: "300px" }}></span>
             </div>
             <CatalogueFilterBar onFilterChange={handleFilterChange} />
