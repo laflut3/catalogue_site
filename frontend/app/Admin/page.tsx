@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation'; // Use 'next/navigation' instead of 'next/router'
 import AdminForm from '@/components/section/Admin/SectionAdmin';
 import { useSession } from "next-auth/react";
@@ -25,7 +25,12 @@ const AdminPage: React.FC = () => {
 
     return (
         <main>
-            <AdminForm />
+            <div className="flex flex-col items-center justify-center">
+                <h1 className="text-6xl font-bold pt-8 mb-2">Admin</h1>
+                <span className="bg-blue-300 h-2 w-32 block mb-16"
+                      style={{backgroundColor: "#99B7DE", height: "10px", width: "300px"}}></span>
+            </div>
+            <AdminForm/>
         </main>
     );
 };

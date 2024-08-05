@@ -3,7 +3,13 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 
-const AdminLinksForm = () => {
+interface ILink {
+    _id: string;
+    url: string;
+    type: string;
+}
+
+const AdminLinksForm: React.FC<{ onAdd: (newLink: ILink) => void }> = ({ onAdd }) => {
     const [url, setUrl] = useState('');
     const [type, setType] = useState('');
     const [message, setMessage] = useState('');
@@ -25,6 +31,7 @@ const AdminLinksForm = () => {
                 setMessage('Link inserted successfully');
                 setUrl('');
                 setType('');
+                onAdd(response.data);
             }
         } catch (error) {
             setError('Failed to insert link');

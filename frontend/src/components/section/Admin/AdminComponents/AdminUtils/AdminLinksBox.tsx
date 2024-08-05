@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { FaEdit, FaTrash } from 'react-icons/fa';
 
@@ -10,12 +10,17 @@ interface ILink {
     type: string;
 }
 
-const AminLinksBox: React.FC<{ link: ILink; onDelete: () => void; onModify: (updatedLink: ILink) => void }> = ({ link, onDelete, onModify }) => {
+const AdminLinksBox: React.FC<{ link: ILink; onDelete: () => void; onModify: (updatedLink: ILink) => void }> = ({ link, onDelete, onModify }) => {
     const [url, setUrl] = useState(link.url);
     const [type, setType] = useState(link.type);
     const [message, setMessage] = useState('');
     const [error, setError] = useState('');
     const [isEditing, setIsEditing] = useState(false);
+
+    useEffect(() => {
+        setUrl(link.url);
+        setType(link.type);
+    }, [link]);
 
     const handleDelete = async () => {
         setMessage('');
@@ -62,8 +67,8 @@ const AminLinksBox: React.FC<{ link: ILink; onDelete: () => void; onModify: (upd
         <div className="bg-gray-200 rounded-lg shadow-md p-4 flex flex-col items-center">
             <div className="flex justify-between items-center w-full">
                 <div>
-                    <p>URL: {link.url}</p>
-                    <p>Type: {link.type}</p>
+                    <p>URL: {url}</p>
+                    <p>Type: {type}</p>
                 </div>
                 <div className="flex space-x-2">
                     <button onClick={() => setIsEditing(true)} className="text-blue-500 hover:text-blue-700">
@@ -89,30 +94,22 @@ const AminLinksBox: React.FC<{ link: ILink; onDelete: () => void; onModify: (upd
                                     id="url"
                                     value={url}
                                     onChange={(e) => setUrl(e.target.value)}
-                                    className="mt-1 block w-full p-2 border border-gray-300 rounded-md"
+                                    className="mt-1 block w-full p-2 border rounded-md"
                                 />
                             </div>
                             <div>
                                 <label htmlFor="type" className="block text-sm font-medium text-gray-700">Type</label>
-                                <select
+                                <input
+                                    type="text"
                                     id="type"
                                     value={type}
                                     onChange={(e) => setType(e.target.value)}
-                                    className="mt-1 block w-full p-2 border border-gray-300 rounded-md"
-                                >
-                                    <option value="">Select Type</option>
-                                    <option value="E-commerce">E-commerce</option>
-                                    <option value="Vitrine">Vitrine</option>
-                                    <option value="Portfolio">Portfolio</option>
-                                </select>
+                                    className="mt-1 block w-full p-2 border rounded-md"
+                                />
                             </div>
                             <div className="flex justify-end space-x-4">
-                                <button type="button" onClick={() => setIsEditing(false)}
-                                        className="px-4 py-2 bg-gray-300 rounded hover:bg-gray-400">Cancel
-                                </button>
-                                <button type="submit"
-                                        className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">Save
-                                </button>
+                                <button type="button" onClick={() => setIsEditing(false)} className="px-4 py-2 bg-gray-300 rounded hover:bg-gray-400">Cancel</button>
+                                <button type="submit" className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">Save</button>
                             </div>
                         </form>
                     </div>
@@ -122,4 +119,4 @@ const AminLinksBox: React.FC<{ link: ILink; onDelete: () => void; onModify: (upd
     );
 };
 
-export default AminLinksBox;
+export default AdminLinksBox;
