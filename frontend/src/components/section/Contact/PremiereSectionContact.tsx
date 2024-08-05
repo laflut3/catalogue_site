@@ -1,7 +1,10 @@
+"use client"
+
 import React, { useRef, useEffect } from 'react';
 import dynamic from 'next/dynamic';
 import * as THREE from 'three';
-import { createCube, createSphere, createTorus, createHalfTorus } from '@/../Lib/threeLib/FormeGradiantFactoryLib';
+import { createCube, createTorus } from '@/../Lib/threeLib/FormeGradiantFactoryLib';
+import { createHalfTorus } from '@/../Lib/threeLib/FormeFactoryLib';
 
 // Dynamically import ContactForm to ensure it's only rendered on the client
 const ContactForm = dynamic(() => import('@/components/section/Contact/formulaire/ContactForm'), { ssr: false });
@@ -27,8 +30,8 @@ const Contact = () => {
 
         // Add shapes to the scene
         const shapes = [
-            createTorus(new THREE.Vector3(-6, 2, 2), new THREE.Color(0x0000ff), new THREE.Color(0x87cefa)),
-            createHalfTorus(new THREE.Vector3(5.2, -3, -3), new THREE.Euler(0, 0, Math.PI / 2), new THREE.Color(0x0000ff), new THREE.Color(0x87cefa)),
+            createTorus(new THREE.Vector3(-6, 4, 2), new THREE.Color(0x0000ff), new THREE.Color(0x87cefa)),
+            createHalfTorus(0x0000ff, new THREE.Vector3(5.2, -3, -3), new THREE.Euler(0, 0, Math.PI / 2)),
             createCube(new THREE.Vector3(8, 3, 3), new THREE.Color(0x0000ff), new THREE.Color(0x87cefa)),
             createCube(new THREE.Vector3(-8, -3, 3), new THREE.Color(0x0000ff), new THREE.Color(0x87cefa)),
         ];
@@ -67,8 +70,13 @@ const Contact = () => {
     }, [mountRef]);
 
     return (
-        <section className="min-h-screen flex items-center justify-center bg-gray-100 relative">
-            <ContactForm />
+        <section className="min-h-screen flex flex-col items-center justify-center bg-gray-100 relative">
+            <div className="flex flex-col items-center justify-center">
+                <h1 className="text-6xl font-bold mb-2">Nous Contacter</h1>
+                <span className="bg-blue-300 h-2 w-32 block mb-16"
+                      style={{backgroundColor: "#99B7DE", height: "10px", width: "300px"}}></span>
+            </div>
+            <ContactForm/>
             <div ref={mountRef} className="absolute top-0 left-0 w-full h-full"></div>
         </section>
     );
