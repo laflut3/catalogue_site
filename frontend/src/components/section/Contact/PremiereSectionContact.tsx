@@ -5,6 +5,7 @@ import dynamic from 'next/dynamic';
 import * as THREE from 'three';
 import { createCube, createTorus } from '@/../Lib/threeLib/FormeGradiantFactoryLib';
 import { createHalfTorus } from '@/../Lib/threeLib/FormeFactoryLib';
+import TitleComponent from "@/components/utils/TitleComponent";
 
 // Dynamically import ContactForm to ensure it's only rendered on the client
 const ContactForm = dynamic(() => import('@/components/section/Contact/formulaire/ContactForm'), { ssr: false });
@@ -71,11 +72,7 @@ const Contact = () => {
 
     return (
         <section className="min-h-screen flex flex-col items-center justify-center bg-gray-100 relative">
-            <div className="flex flex-col items-center justify-center">
-                <h1 className="text-6xl font-bold mb-2">Nous Contacter</h1>
-                <span className="bg-blue-300 h-2 w-32 block mb-16"
-                      style={{backgroundColor: "#99B7DE", height: "10px", width: "300px"}}></span>
-            </div>
+            <TitleComponent title={"Nous contacter"}/>
             <ContactForm/>
             <div ref={mountRef} className="absolute top-0 left-0 w-full h-full"></div>
         </section>

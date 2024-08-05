@@ -4,6 +4,7 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import CatalogueCard from './CatalogueUtils/CatalogueCard';
 import CatalogueFilterBar from './CatalogueUtils/CatalogueFilterBar';
+import TitleComponent from "@/components/utils/TitleComponent";
 
 interface ILink {
     _id: string;
@@ -52,11 +53,7 @@ const SectionCatalogue: React.FC = () => {
 
     return (
         <section className="min-h-screen pt-8 font-Russo">
-            <div className="flex flex-col items-center justify-center">
-                <h1 className="text-6xl font-bold pt-8 mb-2">Nos réalisations</h1>
-                <span className="bg-blue-300 h-2 w-32 block mb-16"
-                      style={{ backgroundColor: "#99B7DE", height: "10px", width: "300px" }}></span>
-            </div>
+            <TitleComponent title={"Nos Réalisation"}/>
             <CatalogueFilterBar onFilterChange={handleFilterChange} />
             {filterType && (
                 <div className="flex justify-center mt-4">
