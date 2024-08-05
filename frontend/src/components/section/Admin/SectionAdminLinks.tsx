@@ -2,8 +2,8 @@
 
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import AdminLinksForm from "./AdminComponents/AdminLinksForm";
-import AdminLinksList from "./AdminComponents/AdminLinksList";
+import AdminLinksForm from "@/components/section/Admin/AdminLinksComponents/AdminLinksForm";
+import AdminLinksList from "@/components/section/Admin/AdminLinksComponents/AdminLinksList";
 
 interface ILink {
     _id: string;

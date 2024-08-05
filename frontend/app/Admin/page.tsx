@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation'; // Use 'next/navigation' instead of 'next/router'
-import AdminForm from '@/components/section/Admin/SectionAdmin';
+import AdminForm from '@/components/section/Admin/SectionAdminLinks';
 import { useSession } from "next-auth/react";
 
 const AdminPage: React.FC = () => {

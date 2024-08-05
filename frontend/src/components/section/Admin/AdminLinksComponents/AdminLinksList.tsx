@@ -1,7 +1,7 @@
 "use client";
 
 import React from 'react';
-import AdminLinksBox from '@/components/section/Admin/AdminComponents/AdminUtils/AdminLinksBox';
+import AdminLinksBox from '@/components/section/Admin/AdminLinksComponents/AdminLinksUtils/AdminLinksBox';
 
 interface ILink {
     _id: string;
