@@ -1,21 +1,19 @@
-import Document, { Html, Head, Main, NextScript } from 'next/document'
-import React from "react";
+import Document, { Html, Head, Main, NextScript } from 'next/document';
 
 class MyDocument extends Document {
     render() {
         return (
             <Html>
                 <Head>
-                    <link rel="icon" href='@/../public/fleo-web-reversed.ico'/>
-                    <title>Fleo-WEB</title>
+                    <link rel="icon" href='/fleo-web-reversed.ico'/>
                 </Head>
                 <body>
                 <Main />
                 <NextScript />
                 </body>
             </Html>
-        )
+        );
     }
 }
 
-export default MyDocument
+export default MyDocument;
