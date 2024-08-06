@@ -2,6 +2,7 @@
 
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import Image from 'next/image';
 
 interface Testimonial {
     User: {
@@ -44,17 +45,18 @@ const Testimonials: React.FC = () => {
     return (
         <section className="py-12 bg-gray-100">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                <h2 className="text-3xl font-extrabold text-gray-900 mb-8">Testimonials</h2>
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
                     {testimonials.map((testimonial, index) => (
                         <div
                             key={index}
                             className="bg-blue-500 p-6 rounded-lg shadow-md text-white flex flex-col items-center"
                         >
-                            <img
+                            <Image
                                 src={testimonial.User.image}
                                 alt={testimonial.User.name}
-                                className="w-24 h-24 rounded-full mb-4"
+                                width={96}
+                                height={96}
+                                className="rounded-full mb-4"
                             />
                             <h3 className="text-lg font-bold">{testimonial.User.name}</h3>
                             <p className="text-sm">{testimonial.objet}</p>

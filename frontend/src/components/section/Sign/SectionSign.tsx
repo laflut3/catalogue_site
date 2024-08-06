@@ -15,7 +15,7 @@ const SectionSign: React.FC = () => {
 
     useEffect(() => {
         if (status === "authenticated") {
-            router.push('/Accueil');
+            router.push('/');
         }
     }, [status, router]);
 
