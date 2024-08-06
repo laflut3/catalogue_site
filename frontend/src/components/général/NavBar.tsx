@@ -1,8 +1,11 @@
+// Fichier : src/components/général/NavBar.tsx
+
 "use client";
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { useSession } from "next-auth/react";
+import Image from 'next/image';
 import UserInitials from "../../../Lib/UserLib/composant/UserInitials";
 import styles from '@/styles/général/NavBarStyle.module.css';
 
@@ -39,7 +42,7 @@ const NavBar = () => {
     const links: LinkProps[] = [
         { link: "/", name: "Accueil" },
         { link: "/Catalogue", name: "Catalogue" },
-        { link: "/About", name: "A propos" },
+        { link: "/About", name: "À propos" },
     ];
 
     return (
@@ -70,7 +73,7 @@ const NavBar = () => {
                                 <LastNavLink link="/Contact" name="Nous contacter" className={animationClass} />
                                 <Link href="/User" className={`cursor-pointer block px-4 py-2 lg:inline-block ${animationClass}`}>
                                     {session?.user?.image ? (
-                                        <img src={session.user.image} alt="Profile" className="rounded-full w-10 h-10" />
+                                        <Image src={session.user.image} alt="Profile" className="rounded-full" width={40} height={40} />
                                     ) : (
                                         <UserInitials firstName={session?.user?.firstName || 'U'} lastName={session?.user?.lastName || 'N'} />
                                     )}

@@ -4,6 +4,7 @@ import React from "react";
 import { signOut } from "next-auth/react";
 import UserInitials from "@/../Lib/UserLib/composant/UserInitials";
 import { useRouter } from "next/navigation";
+import Image from 'next/image';
 
 interface UserProps {
     name: string;
@@ -31,7 +32,13 @@ const UserPage: React.FC<UserProps> = ({ name, email, imageVerif, image, firstNa
                     {!imageVerif ? (
                         <UserInitials firstName={firstName} lastName={lastName} />
                     ) : (
-                        <img src={image} alt={`${name}'s profile`} className="rounded-full w-24 h-24 mb-4 shadow-md" />
+                        <Image
+                            src={image}
+                            alt={`${name}'s profile`}
+                            width={96}
+                            height={96}
+                            className="rounded-full mb-4 shadow-md"
+                        />
                     )}
                     <div className="text-center text-black space-y-2">
                         <p><strong>Nom :</strong> {firstName}</p>
@@ -51,7 +58,7 @@ const UserPage: React.FC<UserProps> = ({ name, email, imageVerif, image, firstNa
                         )}
                     </div>
                     <button
-                        onClick={() => signOut({ callbackUrl: '/Accueil' })}
+                        onClick={() => signOut({ callbackUrl: '/' })}
                         className="mt-4 p-3 bg-blue-500 text-white rounded shadow hover:bg-blue-600"
                     >
                         Se déconnecter
