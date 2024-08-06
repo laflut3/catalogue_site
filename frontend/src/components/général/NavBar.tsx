@@ -39,7 +39,7 @@ const NavBar = () => {
     const links: LinkProps[] = [
         { link: "/", name: "Accueil" },
         { link: "/Catalogue", name: "Catalogue" },
-        { link: "/FAQ", name: "FAQ" },
+        { link: "/About", name: "A propos" },
     ];
 
     return (

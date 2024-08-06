@@ -1,12 +1,16 @@
 "use client"
 
-import React from "react";
-import TitleComponent from "@/components/utils/TitleComponent";
+import Testimonial from '@/components/section/About/SectionTestimonial';
+import TitleComponent from '@/components/utils/TitleComponent';
+import React from 'react';
 
 const About: React.FC = () => {
     return (
-        <main>
-            <TitleComponent title={"A propos"}/>
-        </main>
+        <div>
+            <TitleComponent title="About" />
+            <Testimonial />
+        </div>
     );
-}
+};
+
+export default About;
