@@ -1,0 +1,60 @@
+.hyperspaceEffect {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 0; /* Derrière le contenu */
+    pointer-events: none; /* Permettre les clics à travers */
+}
+
+.star {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background: white;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.gradientBg {
+    background: radial-gradient(circle at center, #000 0%, #333 60%, #000 100%);
+}
+
+.contentContainer {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+}
+
+.typewriterContainer {
+    font-size: 2rem;
+    margin-top: 1rem;
+}
+
+.countdownText {
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    z-index: 3;
+    pointer-events: auto; /* Assurer que le bouton est cliquable */
+}
+
+.countdownText:hover {
+    transform: scale(1.1);
+}
+
+.shakeContainer {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1; /* Devant le fond mais derrière le texte */
+}
+
+.visibleContent {
+    display: none;
+}

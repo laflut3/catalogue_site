@@ -1,0 +1,11 @@
+.logoDiv {
+    z-index: 10; /* S'assurer que le logo est au-dessus */
+}
+
+.logo{
+    border-radius: 100%;
+}
+
+.image {
+    z-index: 5; /* S'assurer que le polygone est derrière */
+}
